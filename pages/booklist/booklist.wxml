@@ -1,0 +1,19 @@
+<!--pages/booklist/booklist.wxml-->
+<view class="viewBox">
+  <!-- 搜索 -->
+  <view class="search">
+    <input placeholder="搜索"></input>
+  </view>
+
+  <!-- 类型 -->
+  <view class="typeList">
+    <view class="{{item.name == selectType ? 'active':'' }} item" wx:for="{{listType}}" bindtap="clickType" data-name="{{item.name}}">{{item.name}}</view>
+  </view>
+
+  <!-- 书单列表 -->
+  <view class="bookList">
+    <view class="item" wx:for="{{20}}">
+      <wi-book book="{{book}}" />
+    </view>
+  </view>
+</view>

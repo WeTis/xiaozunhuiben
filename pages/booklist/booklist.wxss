@@ -1,0 +1,45 @@
+/* pages/booklist/booklist.wxss */
+.search{
+  width: 80%;
+  height: 80rpx;
+  line-height: 80rpx;
+  border: 1px solid #666;
+  border-radius: 40rpx;
+  margin: 20rpx auto;
+}
+.search input {
+  width: 100%;
+  height: 100%;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+
+.typeList{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  /* flex-wrap: wrap; */
+  align-items: center;
+  justify-content: space-between;
+  overflow: auto;
+}
+.typeList .item{
+  flex-shrink: 0;
+  padding: 20rpx;
+}
+.typeList .active{
+  color: blue;
+}
+
+.bookList{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 10rpx;
+  box-sizing: border-box;
+}
+.bookList .item{
+  width: 50%;
+  padding: 10rpx;
+  box-sizing: border-box;
+}

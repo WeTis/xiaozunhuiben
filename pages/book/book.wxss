@@ -1,0 +1,207 @@
+/* pages/book/book.wxss */
+.bookDetail {
+  background-color: #f3f3f3;
+  overflow: hidden; 
+}
+.imgs{
+  width: 100%;
+  height: 480rpx;
+  background-color: #fff;
+}
+.imgs image{
+  width: 100%;
+  height: 100%;
+}
+
+.pro{
+  background-color: #fff;
+  margin-bottom: 40rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+.introduce{
+  width: 100%;
+  padding: 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  margin-bottom: 40rpx;
+}
+.introduce .c{
+  flex: 1;
+  font-size: 28rpx;
+  color: #999;
+  padding-left: 10rpx;
+}
+.introduce i{
+  padding-left: 20rpx;
+  font-size: 20rpx;
+}
+
+.stepBox {
+  width: 100%;
+  margin-bottom: 40rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+.stepBox .title{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.stepBox .title .name{
+  flex: 1;
+}
+.stepBox .title .moreBtn{
+  padding: 0 10rpx;
+  font-size: 24rpx;
+  color: blue;
+}
+.stepBox .title .moreBtn i{
+  padding-left: 30rpx;
+  font-size: 20rpx;
+  color: blue;
+}
+.step{
+  display: flex;
+  width: 100%;
+  margin-top: 20rpx;
+  padding: 10rpx 40rpx;
+  box-sizing: border-box;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.step .step-item{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.step-item i{
+  font-size: 60rpx;
+}
+.step-item .p{
+  position: absolute;
+  right: -12rpx;
+  top: 18rpx;
+  font-size: 24rpx;
+}
+.step-item text{
+  font-size: 24rpx;
+}
+
+.de{
+  width: 100%;
+  padding: 20rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+.de .text{
+  padding: 20rpx 0;
+  font-size: 30rpx;
+  text-align: 52rpx;
+  color: #999;
+  line-height: 50rpx;
+}
+.de image{
+  width: 100%;
+}
+
+.lists{
+  margin: 20rpx 0;
+}
+
+.buyBox{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  background-color: #fff;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.buyBox .left{
+  width: 150rpx;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 24rpx;
+  color: #999;
+}
+.buyBox .right{
+  flex: 1;
+  height: 100%;
+  background-color: red;
+  color: #fff;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.propBox{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  z-index: 999;
+}
+.propBox .shadow{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 0;
+}
+.propBox .content{
+  position: relative;
+  padding-top: 40rpx;
+  flex: 1;
+  background-color: #fff;
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+}
+.propBox .content .item{
+  width: 100%;
+  padding: 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.propBox .left{
+  width: 160rpx;
+  text-align: center;
+}
+.propBox .right{
+  flex: 1;
+  font-size: 24rpx;
+  color: #999;
+}
+.propBox .closeBtn{
+  position: absolute;
+  right: 40rpx;
+  top: 20rpx;
+  font-size: 50rpx;
+}

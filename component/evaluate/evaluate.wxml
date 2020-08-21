@@ -1,0 +1,17 @@
+<!--component/evaluate/evaluate.wxml 评价-->
+<view class="evaluate">
+  <view class="left">
+    <image class="ave" src="{{evaluate.src}}"></image>
+  </view>
+  <view class="right">
+    <view class="name">{{evaluate.name}}</view>
+    <view class="time">{{evaluate.time}}</view>
+    <view class="content">{{evaluate.content}}</view>
+    <view class="score">
+      <text>星级评分</text>
+      <view class="start" >
+        <i class="iconfont icon-shoucang {{index+1 <= evaluate.score ? 'active':''}}" wx:for="{{5}}"></i>
+      </view>
+    </view>
+  </view>
+</view>

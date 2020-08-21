@@ -1,0 +1,41 @@
+/* component/evaluate/evaluate.wxss */
+.evaluate{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #999;
+  padding: 20rpx 0;
+}
+.evaluate .left{
+  width: 200rpx;
+}
+.left image {
+  width: 180rpx;
+  height: 180rpx;
+}
+.evaluate .right{
+  flex: 1;
+}
+.content{
+  font-size: 24rpx;
+}
+.score{
+  font-size: 24rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 30rpx;
+  margin-top: 20rpx;
+}
+.score .start{
+  margin-left: 30rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.score .start i.active{
+  color: yellow;
+}

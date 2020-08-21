@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "wi-book": "/component/book/book"
+  }
+}

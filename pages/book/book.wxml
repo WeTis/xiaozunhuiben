@@ -1,0 +1,128 @@
+<!--pages/book/book.wxml-->
+<view class="bookDetail">
+  <!-- 顶部图片 -->
+  <view class="imgs">
+    <image src="/images/icons/me.png"></image>
+  </view>
+  <!-- 书籍简介 -->
+  <view class="pro">
+    <view class="title">我的大喊大叫的一天</view>
+    <view class="author">作者：帕特森</view>
+    <view class="dess">出版社：新世纪出版社</view>
+  </view>
+  <!-- 服务介绍 -->
+  <view class="introduce" bindtap="showPropBoxFn">
+    <view class="l">服务保障</view>
+    <view class="c">正品保障·往返包邮·百万商品·安全消毒</view>
+    <i class="iconfont icon-xiangyou"></i>
+  </view>
+  <!-- 租聘流程 -->
+  <view class="stepBox">
+    <view class="title">
+      <view class="name">租赁流程：</view>
+      <view class="moreBtn">
+        <text>更多</text>
+        <i class="iconfont icon-xiangyou"></i>
+      </view>
+    </view>
+    <view class="step">
+      <view class="step-item">
+        <i class="iconfont icon-weibiaoti--"></i>
+        <text>选择商品</text>
+        <i class="iconfont icon-xiangyou p"></i>
+      </view>
+      <view class="step-item">
+        <i class="iconfont icon-weibiaoti--"></i>
+        <text>支付租押金</text>
+        <i class="iconfont icon-xiangyou p"></i>
+      </view>
+      <view class="step-item">
+        <i class="iconfont icon-weibiaoti--"></i>
+        <text>收货体验</text>
+        <i class="iconfont icon-xiangyou p"></i>
+      </view>
+      <view class="step-item">
+        <i class="iconfont icon-weibiaoti--"></i>
+        <text>预约归还</text>
+      </view>
+    </view>
+  </view>
+  <!-- 归还须知 -->
+  <view class="stepBox">
+    <view class="title">
+      <view class="name">归还须知：</view>
+      <view class="moreBtn">
+        <text>更多</text>
+        <i class="iconfont icon-xiangyou"></i>
+      </view>
+    </view>
+    <view class="step">
+      <view class="step-item">
+        <i class="iconfont icon-weibiaoti--"></i>
+        <text>预约快递</text>
+        <i class="iconfont icon-xiangyou p"></i>
+      </view>
+      <view class="step-item">
+        <i class="iconfont icon-weibiaoti--"></i>
+        <text>免费取件</text>
+        <i class="iconfont icon-xiangyou p"></i>
+      </view>
+      <view class="step-item">
+        <i class="iconfont icon-weibiaoti--"></i>
+        <text>仓库结算</text>
+        <i class="iconfont icon-xiangyou p"></i>
+      </view>
+      <view class="step-item">
+        <i class="iconfont icon-weibiaoti--"></i>
+        <text>订单完成</text>
+      </view>
+    </view>
+  </view>
+  <!-- 评价 -->
+  <view class="evaluateList stepBox">
+    <view class="title">
+      <view class="name">用户评价：</view>
+      <view class="moreBtn" bindtap="jumpToEvaluatelist">
+        <text>更多</text>
+        <i class="iconfont icon-xiangyou"></i>
+      </view>
+    </view>
+    <view class="lists">
+      <wi-evaluate wx:for="{{3}}" evaluate="{{evaluate}}"/>
+    </view>
+  </view>
+  <!-- 商品介绍 -->
+  <view class="de">
+    <view class="title">商品简介：</view>
+    <view class="text">
+      英国绘本作家、画家，生于博尔顿，现居剑桥。最初只是画绘本草图，孩子们上学后，瑞贝卡开始到剑桥艺术学院攻读儿童书绘画硕士学位，并以绘本创作作为毕业作品。瑞贝卡的作品多半从她的孩子身上获取灵感，具有游戏性和趣味性，很受孩子欢迎。2012年，瑞贝卡凭借《我的大喊大叫的一天！》荣获罗尔德·达尔幽默童书奖。
+    </view>
+    <image mode="widthFix" src="/images/m.jpg"></image>
+  </view>
+
+  <!-- 底部购买 -->
+  <view class="buyBox">
+    <view class="left">
+      <i class="iconfont icon-ziyuanldpi"></i>
+      <text>书架</text>
+    </view>
+    <view class="right">加入书架</view>
+  </view>
+</view>
+
+<!-- 服务保障弹窗 -->
+<view class="propBox" wx:if="{{showPropBox}}" >
+   <view class="shadow" bindtap="showPropBoxFn"></view>
+   <view class="content">
+     <view class="closeBtn" bindtap="showPropBoxFn" >X</view>
+      <view class="item" wx:for="{{des}}">
+        <view class="left">
+          <i class="iconfont icon-xiangyou"></i>
+        </view>
+        <view class="right">
+          <view class="n">{{item.n}}</view>
+          <view class="d">{{item.d}}</view>
+        </view>
+      </view>
+   </view>
+</view>

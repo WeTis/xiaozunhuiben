@@ -1,0 +1,4 @@
+<!--pages/evaluatelist/evaluatelist.wxml-->
+<view class="lists">
+      <wi-evaluate wx:for="{{13}}" evaluate="{{evaluate}}"/>
+    </view>
