@@ -66,6 +66,13 @@
 					"id": -1,
 					"name": "评价列表",
 					"pathName": "pages/evaluatelist/evaluatelist",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "书架",
+					"pathName": "pages/card/card",
 					"scene": null
 				}
 			]

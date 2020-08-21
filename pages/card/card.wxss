@@ -1,0 +1,107 @@
+/* pages/card/card.wxss */
+.card{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  background-color: #f3f3f3;
+  padding-bottom: 120rpx;
+}
+.list{
+  width: 100%;
+  padding: 30rpx;
+  padding-bottom: 0;
+  box-sizing: border-box;
+}
+.item{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 40rpx;
+  background-color: #fff;
+  border-radius: 8rpx;
+  margin-bottom: 30rpx;
+}
+.item .left i{
+  font-size: 50rpx;
+  height: 100%;
+  padding-right: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.blue{
+  color: blue;
+}
+.item .center {
+  margin-right: 20rpx;
+  width: 160rpx;
+}
+.item .center image{
+  width: 160rpx;
+
+}
+.item .right {
+  flex: 1;
+  font-size: 30rpx;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bottomFixed{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  z-index: 1;
+}
+.bottomFixed .left {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.bottomFixed .left .select{
+  height: 100%;
+  font-size: 30rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #999;
+  margin-right: 40rpx
+}
+.bottomFixed .left .select i{
+  font-size: 40rpx;
+  margin: 30rpx;
+  margin-right: 20rpx;
+}
+.bottomFixed .left .numText{
+  font-size: 30rpx;
+  color: #666;
+}
+.bottomFixed .left .num{
+  color: rgb(23, 223, 23);
+}
+
+.bottomFixed .right{
+  height: 100%;
+  width: 240rpx;
+  text-align: center;
+  line-height: 120rpx;
+  color: #fff;
+  font-size: 32rpx;
+  font-weight: bolder;
+  background-color: rgb(23, 223, 23);
+}

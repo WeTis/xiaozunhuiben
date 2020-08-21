@@ -5,7 +5,8 @@
     "pages/my/my",
     "pages/booklist/booklist",
     "pages/book/book",
-    "pages/evaluatelist/evaluatelist"
+    "pages/evaluatelist/evaluatelist",
+    "pages/card/card"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -20,6 +21,12 @@
       {
         "pagePath": "pages/index/index",
         "text": "首页",
+        "iconPath": "images/icons/me.png",
+        "selectedIconPath": "images/icons/me.png"
+      },
+      {
+        "pagePath": "pages/card/card",
+        "text": "书架",
         "iconPath": "images/icons/me.png",
         "selectedIconPath": "images/icons/me.png"
       },

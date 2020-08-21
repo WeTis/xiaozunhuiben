@@ -1,0 +1,35 @@
+<view class="card">
+  <view class="list">
+    <view class="item" wx:for="{{list}}" bindtap="jumpToBooks">
+      <view class="left" catchtap="checkedFn" data-index="{{index}}">
+        <i class="iconfont icon-xianshi_xuanze" wx:if="{{!item.check}}"></i>
+        <i class="iconfont icon-xuanze blue" wx:if="{{item.check}}"></i>
+      </view>
+      <view class="center">
+        <image src="{{item.img}}" mode="widthFix"></image>
+      </view>
+      <view class="right">
+        {{item.name}}
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部全选 -->
+  <view class="bottomFixed">
+    <view class="left">
+      <view class="select" bindtap="allCheckedFn">
+        <i class="iconfont icon-xianshi_xuanze" wx:if="{{!allChecked}}"></i>
+        <i class="iconfont icon-xuanze blue" wx:if="{{allChecked}}"></i>
+        <text>全选</text>
+      </view>
+      <view class="numText">
+        <text class="t">已选：</text>
+        <text class="num">{{count}}</text>
+        <text>书位</text>
+      </view>
+    </view>
+    <view class="right">
+      去下单
+    </view>
+  </view>
+</view>
