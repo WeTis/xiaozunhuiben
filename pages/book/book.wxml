@@ -2,19 +2,22 @@
 <view class="bookDetail">
   <!-- 顶部图片 -->
   <view class="imgs">
-    <image src="/images/icons/me.png"></image>
+    <image src="/images/icons/me.png" mode="aspectFit "></image>
   </view>
   <!-- 书籍简介 -->
   <view class="pro">
     <view class="title">我的大喊大叫的一天</view>
+    <view class="lab">
+      <view class="lab-item">0-3岁</view>
+    </view>
     <view class="author">作者：帕特森</view>
-    <view class="dess">出版社：新世纪出版社</view>
+    <view class="author">出版社：新世纪出版社</view>
   </view>
   <!-- 服务介绍 -->
   <view class="introduce" bindtap="showPropBoxFn">
     <view class="l">服务保障</view>
     <view class="c">正品保障·往返包邮·百万商品·安全消毒</view>
-    <i class="iconfont icon-xiangyou"></i>
+    <i class="font_family icon-gengduojiantou"></i>
   </view>
   <!-- 租聘流程 -->
   <view class="stepBox">
@@ -22,27 +25,27 @@
       <view class="name">租赁流程：</view>
       <view class="moreBtn">
         <text>更多</text>
-        <i class="iconfont icon-xiangyou"></i>
+        <i class="font_family icon-gengduojiantou"></i>
       </view>
     </view>
     <view class="step">
       <view class="step-item">
-        <i class="iconfont icon-weibiaoti--"></i>
+        <i class="font_family icon-xuanzeshangpin"></i>
         <text>选择商品</text>
-        <i class="iconfont icon-xiangyou p"></i>
+        <i class="font_family icon-gengduojiantou p"></i>
       </view>
       <view class="step-item">
-        <i class="iconfont icon-weibiaoti--"></i>
+        <i class="font_family icon-zhifuzuyajin"></i>
         <text>支付租押金</text>
-        <i class="iconfont icon-xiangyou p"></i>
+        <i class="font_family icon-gengduojiantou p"></i>
       </view>
       <view class="step-item">
-        <i class="iconfont icon-weibiaoti--"></i>
+        <i class="font_family icon-shouhuotiyan"></i>
         <text>收货体验</text>
-        <i class="iconfont icon-xiangyou p"></i>
+        <i class="font_family icon-gengduojiantou p"></i>
       </view>
       <view class="step-item">
-        <i class="iconfont icon-weibiaoti--"></i>
+        <i class="font_family icon-yuyueguihuan"></i>
         <text>预约归还</text>
       </view>
     </view>
@@ -53,27 +56,27 @@
       <view class="name">归还须知：</view>
       <view class="moreBtn">
         <text>更多</text>
-        <i class="iconfont icon-xiangyou"></i>
+        <i class="font_family icon-gengduojiantou"></i>
       </view>
     </view>
     <view class="step">
       <view class="step-item">
-        <i class="iconfont icon-weibiaoti--"></i>
+        <i class="font_family icon-yuyuekuaidi"></i>
         <text>预约快递</text>
-        <i class="iconfont icon-xiangyou p"></i>
+        <i class="font_family icon-gengduojiantou p"></i>
       </view>
       <view class="step-item">
-        <i class="iconfont icon-weibiaoti--"></i>
+        <i class="font_family icon-mianfeiqujian"></i>
         <text>免费取件</text>
-        <i class="iconfont icon-xiangyou p"></i>
+        <i class="font_family icon-gengduojiantou p"></i>
       </view>
       <view class="step-item">
-        <i class="iconfont icon-weibiaoti--"></i>
+        <i class="font_family icon-cangkujiesuan"></i>
         <text>仓库结算</text>
-        <i class="iconfont icon-xiangyou p"></i>
+        <i class="font_family icon-gengduojiantou p"></i>
       </view>
       <view class="step-item">
-        <i class="iconfont icon-weibiaoti--"></i>
+        <i class="font_family icon-dingdanwancheng"></i>
         <text>订单完成</text>
       </view>
     </view>
@@ -84,7 +87,7 @@
       <view class="name">用户评价：</view>
       <view class="moreBtn" bindtap="jumpToEvaluatelist">
         <text>更多</text>
-        <i class="iconfont icon-xiangyou"></i>
+        <i class="font_family icon-gengduojiantou"></i>
       </view>
     </view>
     <view class="lists">
@@ -103,7 +106,7 @@
   <!-- 底部购买 -->
   <view class="buyBox">
     <view class="left">
-      <i class="iconfont icon-ziyuanldpi"></i>
+      <i class="font_family icon-ziyuanldpi"></i>
       <text>书架</text>
     </view>
     <view class="right">加入书架</view>
@@ -117,7 +120,7 @@
      <view class="closeBtn" bindtap="showPropBoxFn" >X</view>
       <view class="item" wx:for="{{des}}">
         <view class="left">
-          <i class="iconfont icon-xiangyou"></i>
+          <i class="font_family icon-gengduojiantou"></i>
         </view>
         <view class="right">
           <view class="n">{{item.n}}</view>

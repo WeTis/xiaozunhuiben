@@ -1,91 +1,79 @@
 <view>
-  <!-- tab切换 -->
-  <view class="wi-tabs">
-    <view class=" wi-tab-item {{1==tab ? 'active':''}}"  bindtap="clickTab" data-index="1">绘本</view>
-    <view class="wi-tab-item {{2==tab ? 'active':''}}" bindtap="clickTab" data-index="2">八音盒</view>
-  </view>
-  <view class="tabBox" wx:if="{{tab == 1}}">
-    <!-- 轮播图 -->
+  <view class="top">
+    <!-- <view class="title">小樽絵本欢迎您</view> -->
+    <navBar background='#FF8D40' ext-class="topNavBar" back="{{false}}" color="#ffffff" title='小樽絵本欢迎您' />
+    <!-- 搜索 -->
+    <view class="search">
+      <i class="iconfont icon-sousuo"></i>
+      <input placeholder="搜索" placeholder-class="placeholderClass"></input>
+    </view>
+
     <view class="wi-swiper">
-      <swiper indicator-dots	autoplay>
+        <swiper indicator-dots indicator-color="rgba(255,255,255,0.4)" indicator-active-color="#fff"	autoplay>
         <swiper-item>
-          <view class="swiper-text" style="background-color: red;">1</view>
+          <view class="swiper-text" >
+            <image src="/images/2.jpg"></image>
+          </view>
         </swiper-item>
         <swiper-item>
-          <view class="swiper-text" style="background-color: blue;">2</view>
+          <view class="swiper-text">
+            <image src="/images/2.jpg"></image>
+          </view>
         </swiper-item>
         <swiper-item>
-          <view class="swiper-text" style="background-color: yellow;">3</view>
+          <view class="swiper-text">
+            <image src="/images/2.jpg"></image>
+          </view>
         </swiper-item>
       </swiper>
     </view>
+  </view>
 
-    <!-- 按钮列表 -->
-    <view class="icons">
-      <view class="icons-item" wx:for="{{iconsData}}">
-        <image src="{{item.img}}"></image>
-        <view class="text">{{item.name}}</view>
-      </view>
+  <view class="icons">
+    <view class="icons-item" wx:for="{{iconsData}}">
+      <image src="{{item.img}}"></image>
+      <view class="text">{{item.name}}</view>
     </view>
-
+  </view>
+  
+  <!-- 业务介绍 -->
+  <view class="listBox">
+    <image src="/images/yw.png"></image>
+    <image src="/images/hy.png"></image>
+  </view>
+  <view class="tabBox">    
     <!-- 新书推荐 -->
     <view class="newBook">
       <view class="title">
         <view class="title-name">新书推荐</view>
-        <view class="moreBtn" bindtap="jumpToBookList">更多</view>
+        <view class="moreBtn" bindtap="jumpToBookList">更多<i class="iconfont icon-xiangyou"></i></view>
       </view>
-      <view class="bookList" >
-        <view class="book" wx:for="{{3}}">
-          <wi-book book="{{book}}" />
+      <view class="newbookList " >
+        <view class="bookF {{index == 2 ? 'newBookb':''}}" wx:for="{{3}}" >
+          <view class="left">
+            <image mode="aspectFit" src="{{newBook.src}}"></image>
+          </view>
+          <view class="right">
+            <view class="bookF-name">{{newBook.name}}</view>
+            <view class="bookF-author">作者：{{newBook.author}}</view>
+            <view class="bookF-lab">
+                <view class="bookF-lab-item" wx:for="{{newBook.labs}}">推荐：{{item.name}}岁</view>
+            </view>
+          </view>
         </view>     
       </view>
-    </view>
-    <!-- 会员已经相关介绍 -->
-    <view class="aboutList">
-      <view class="aL-item">业务介绍</view>
-      <view class="aL-item">加入会员</view>
-      <view class="aL-item">关于小樽</view>
     </view>
     <!-- 分类书籍 -->
     <view class="bookType">
       <view class="type-item" wx:for="{{listType}}">
         <view class="title">
           <view class="title-name">{{item.name}}</view>
-          <view class="moreBtn" bindtap="jumpToBookList">更多</view>
+          <view class="moreBtn" bindtap="jumpToBookList" data-name="{{item.name}}">更多<i class="iconfont icon-xiangyou" ></i></view>
         </view>
         <view class="bookList" >
-          <view class="book" wx:for="{{2}}">
-            <wi-book book="{{book}}" />
+          <view class="book" wx:for-item="itemBook" wx:for="{{item.list}}">
+            <wi-book book="{{itemBook}}" />
           </view>     
-        </view>
-      </view>
-    </view>
-  
-  </view>
-
-  <view class="tabBox" wx:if="{{tab == 2}}">
-    <!-- 轮播图 -->
-    <view class="wi-swiper">
-      <swiper indicator-dots	autoplay>
-        <swiper-item>
-          <view class="swiper-text" style="background-color: red;">1515</view>
-        </swiper-item>
-        <swiper-item>
-          <view class="swiper-text" style="background-color: blue;">22551</view>
-        </swiper-item>
-        <swiper-item>
-          <view class="swiper-text" style="background-color: yellow;">31154</view>
-        </swiper-item>
-      </swiper>
-    </view>
-    <!-- 商品列表 -->
-    <view class="shopList">
-      <view class="shop" wx:for="{{20}}">
-        <image src="/images/icons/me.png"></image>
-        <view class="name">八音盒商品</view>
-        <view class="bottom">
-          <view class="price">￥8</view>
-          <view class="card">购物车</view>
         </view>
       </view>
     </view>

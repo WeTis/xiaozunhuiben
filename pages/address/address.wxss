@@ -1,0 +1,54 @@
+/* pages/address/address.wxss */
+.list {
+  width: 100%;
+  padding: 30rpx;
+  padding-bottom: 0;
+  
+  box-sizing: border-box;
+}
+.list .item{
+  width: 100%;
+  background-color: #fff;
+  border-radius: 8rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+  margin-bottom: 30rpx;
+  position: relative;
+}
+.topRight{
+  position: absolute;
+  top: 30rpx;
+  right: 30rpx;
+  z-index: 2;
+}
+.item .name{
+  font-size: 34rpx;
+  padding-right: 20rpx;
+}
+.item .phone{
+  font-size: 30rpx;
+  color: #888;
+}
+.item .addressDest{
+  padding: 30rpx 0;
+  font-size: 32rpx;
+  color: #666;
+}
+.item .btns{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+.item .btns .btn{
+  font-size: 28rpx;
+  padding: 0 40rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  margin-left: 20rpx;
+  border: 1px solid #666;
+  color: #666;
+  border-radius: 25rpx;
+}
+

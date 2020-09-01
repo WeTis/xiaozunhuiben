@@ -1,0 +1,50 @@
+/* pages/wishlist/wishlist.wxss */
+
+
+.dist{
+  font-size: 32rpx;
+  color: #999;
+  padding-left: 30rpx;
+}
+
+.table .pic{
+  height: 300rpx;
+}
+.table .pic .left{
+  height: 50rpx;
+  line-height: 50rpx;
+}
+.table .pic .right{
+  width: 100%;
+  flex: none;
+  height: 200rpx;
+  margin-top: 20rpx;
+}
+.table .pic .right image{
+  width: 180rpx;
+  height: 180rpx;
+}
+.uplodImg{
+  width: 180rpx;
+  height: 180rpx;
+  border: 1px solid #eee;
+  border-radius: 8rpx;
+  text-align: center;
+  line-height: 180rpx;
+}
+.uplodImg i{
+  color:  #eee;
+  font-size: 60rpx;
+}
+
+.btn{
+  width: 700rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 32rpx;
+  background-color:  #07c160;
+  color: #fff;
+  margin: 50rpx auto;
+  border-radius: 10rpx;
+}

@@ -94,7 +94,7 @@ Page({
       }
     })
     
-    if(count > 3) {
+    if(count > 5) {
       wx.showToast({
         title: '每次最多选择五本书',
         icon: 'none'
@@ -116,6 +116,11 @@ Page({
   jumpToBooks(e) {
     wx.navigateTo({
       url: '/pages/book/book',
+    })
+  },
+  jumpTosubmitOrder() {
+    wx.navigateTo({
+      url: '/pages/submitOrder/submitOrder',
     })
   }
 })

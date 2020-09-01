@@ -1,0 +1,7 @@
+<view class="list pageFixed">
+  <view class="item" wx:for="{{list}}" wx:key="{{item.id}}">
+      <image src="{{item.labelImage}}"></image>
+      <view class="name">{{item.productLabel}}</view>
+      <view class="dist">{{item.labelRemark}}</view>
+  </view>
+</view>

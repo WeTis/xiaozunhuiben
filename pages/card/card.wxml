@@ -28,7 +28,7 @@
         <text>书位</text>
       </view>
     </view>
-    <view class="right">
+    <view class="right" bindtap="jumpTosubmitOrder">
       去下单
     </view>
   </view>

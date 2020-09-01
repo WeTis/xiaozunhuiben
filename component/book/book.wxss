@@ -10,28 +10,43 @@
   justify-content: center;
 }
 .wi-book .image image{
-   width: 200rpx;
-  height: 200rpx;
+  border-radius: 10rpx;
 }
 .wi-book .name{
   width: 100%;
-  height: 60rpx;
-  line-height: 60rpx;
+  /* height: 37rpx; */
   overflow: hidden;
   text-overflow:ellipsis;
   white-space: nowrap;
+  font-size:26rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(67,52,44,1);
+  line-height:37rpx;
+  padding-top: 10rpx;
+  text-align: center;
+  
 }
 .wi-book .labs {
   width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin: 30rpx 0;
+  margin-bottom: 20rpx;
 }
 .labs .lab{
-  padding: 5rpx 10rpx;
-  border-radius: 4rpx;
-  background-color: red;
-  color: #fff;
-  font-size: 24rpx;
+  padding: 0 15rpx;
+  height: 38rpx;
+  line-height: 38rpx;
+  text-align: center;
+  border-radius: 19rpx;
+  background-color: rgba(255,232,222,1);
+  font-size: 22rpx;
+  font-family: PingFangSC-Regular,PingFang SC;
+  font-weight: 400;
+  color: rgba(255,141,64,1);
+  margin-right: 15rpx;
+
 }
 

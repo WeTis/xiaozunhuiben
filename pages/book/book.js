@@ -1,4 +1,6 @@
 // pages/book/book.js
+import { api } from './module.js';
+const http = new api();
 Page({
 
   /**
@@ -41,7 +43,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let id = options.id;
+    this.getDetail(id)
   },
   jumpToEvaluatelist() {
     wx.navigateTo({
@@ -53,6 +56,15 @@ Page({
     console.log(1)
     this.setData({
       showPropBox: !showPropBox
+    })
+  },
+  getDetail(productId) {
+    let data = {
+      productId: productId
+    };
+    http.getOneProduct(data) 
+    .then(res => {
+
     })
   },
   /**

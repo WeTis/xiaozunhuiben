@@ -1,0 +1,12 @@
+
+
+function _splitInfo(value, deg) {
+  var arr = value ? (value.split(deg)) : [];
+  return arr;
+}
+
+
+module.exports = {
+  _splitInfo: _splitInfo,
+
+}

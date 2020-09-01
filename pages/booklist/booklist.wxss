@@ -1,4 +1,14 @@
 /* pages/booklist/booklist.wxss */
+page{
+  /* background:rgba(249,244,242,1); */
+  min-height: 100%;
+}
+.viewBox{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
+}
 .search{
   width: 80%;
   height: 80rpx;
@@ -6,6 +16,7 @@
   border: 1px solid #666;
   border-radius: 40rpx;
   margin: 20rpx auto;
+  background-color: #fff;
 }
 .search input {
   width: 100%;
@@ -22,24 +33,47 @@
   align-items: center;
   justify-content: space-between;
   overflow: auto;
+  background-color: #fff;
+  padding: 0 20rpx;
+  box-sizing: border-box;
 }
 .typeList .item{
   flex-shrink: 0;
   padding: 20rpx;
 }
 .typeList .active{
-  color: blue;
+  color: rgba(255,141,64,1);
 }
 
 .bookList{
+  flex: 1;
+  padding: 20rpx;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  padding: 10rpx;
   box-sizing: border-box;
+  justify-content: space-between;
+  align-content: flex-start;
+  overflow: auto;
 }
 .bookList .item{
-  width: 50%;
-  padding: 10rpx;
+  width: 345rpx;
+  height: 400rpx;
+  padding: 20rpx;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20rpx;
+  border-radius: 10rpx;
+  background: #fff;
+}
+.bookList .item wi-book{
+  width: 310rpx;
+  
+}
+ .bookList .item wi-book .image image{
+  width: 310rpx;
+  height: 207rpx;
 }

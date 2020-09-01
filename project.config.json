@@ -4,19 +4,27 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"autoAudits": false,
 		"coverView": true,
+		"autoAudits": false,
 		"showShadowRootInWxmlPanel": true,
-		"scopeDataCheck": false
+		"scopeDataCheck": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.12.0",
-	"appid": "wx1bec6e47dc5f8e8c",
+	"appid": "wx6d408104df0509e4",
 	"projectname": "%E5%B0%8F%E6%A8%BD%E7%BB%98%E6%9C%AC",
 	"debugOptions": {
 		"hidedInDevtools": []
@@ -73,6 +81,48 @@
 					"id": -1,
 					"name": "书架",
 					"pathName": "pages/card/card",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "心愿书单",
+					"pathName": "pages/wishlist/wishlist",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "收货地址",
+					"pathName": "pages/address/address",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "新增收货地址",
+					"pathName": "pages/newAddress/newAddress",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "提交订单页",
+					"pathName": "pages/submitOrder/submitOrder",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "订单书籍列表",
+					"pathName": "pages/bookOrder/bookOrder",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "获奖作品",
+					"pathName": "pages/awards/awards",
 					"scene": null
 				}
 			]

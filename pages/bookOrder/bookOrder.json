@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "wi-book": "/component/book/book"
+  },
+  "navigationBarTitleText": "订单详情"
+}

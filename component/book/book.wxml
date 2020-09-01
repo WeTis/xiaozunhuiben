@@ -1,11 +1,12 @@
 <!--component/book/book.wxml-->
-<view class="wi-book" bindtap="jumpTobook">
+<wxs module='filter' src='../../utils/tool.wxs'></wxs>
+<view class="wi-book" bindtap="jumpTobook" data-id="{{book.id}}">
   <view class="image">
-    <image src="{{book.src}}"></image>
+    <image src="{{book.productImage}}" mode="aspectFit"></image>
   </view>
   
-  <view class="name">{{book.name}}</view>
-  <view class="labs">
-    <view class="lab" wx:for="{{book.labs}}">{{item.name}}</view>
+  <view class="name">{{book.productName}}</view>
+  <view class="labs" wx:if="{{showLab}}">
+    <view class="lab" wx:for="{{filter._splitInfo(book.labs,',')}}">{{item}}</view>
   </view>
 </view>

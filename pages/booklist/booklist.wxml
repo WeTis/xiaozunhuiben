@@ -1,10 +1,14 @@
 <!--pages/booklist/booklist.wxml-->
-<view class="viewBox">
+<view class="viewBox pageFixed">
   <!-- 搜索 -->
-  <view class="search">
-    <input placeholder="搜索"></input>
-  </view>
-
+  <navBar title='' background='#fff' back="{{true}}" home="{{true}}" bindback="handlerGobackClick" bindhome="handlerGohomeClick">
+        <view class='lxy-nav-bar-search' slot="center">
+            <view class='lxy-nav-bar-search__icon' />
+            <view class='lxy-nav-bar-search__input'>
+                <input bindconfirm="confirmSearch" bindinput="search" class="srch-ipt" confirmType="search" placeholder="搜索内容" placeholderClass="ipt-placeholder" type="text" value=""></input>
+            </view>
+        </view>
+    </navBar>
   <!-- 类型 -->
   <view class="typeList">
     <view class="{{item.name == selectType ? 'active':'' }} item" wx:for="{{listType}}" bindtap="clickType" data-name="{{item.name}}">{{item.name}}</view>
@@ -12,8 +16,8 @@
 
   <!-- 书单列表 -->
   <view class="bookList">
-    <view class="item" wx:for="{{20}}">
-      <wi-book book="{{book}}" />
+    <view class="item" wx:for="{{list}}">
+      <wi-book book="{{item}}" showLab="{{true}}" />
     </view>
   </view>
 </view>

@@ -1,0 +1,42 @@
+<!--pages/newAddress/newAddress.wxml-->
+<view class="pageFixed">
+  <view class="wi-table table">
+    <view class="item">
+      <view class="left">收货人：</view>
+      <view class="right">
+        <input placeholder="请输入姓名"></input>
+      </view>
+    </view>
+    <view class="item">
+      <view class="left">手机号码：</view>
+      <view class="right">
+        <input placeholder="请输入手机号码"></input>
+      </view>
+    </view>
+    <view class="item">
+      <view class="left">所在省市区：</view>
+      <view class="right iconNext">
+          <picker mode="region" value="{{region}}"  bindchange="bindRegionChange">
+      <view class="picker">
+        {{region[0] ? (region[0]+','+region[1]+','+region[2]) : '请选择'}}
+      </view>
+    </picker>
+        <i class="iconfont icon-xiangyou"></i>
+      </view>
+    </view>
+    <view class="item">
+      <view class="left">详细地址：</view>
+      <view class="right">
+        <input placeholder="请输入详细地址"></input>
+      </view>
+    </view>
+    <view class="item">
+      <view class="left">设为默认地址：</view>
+      <view class="right rightm">
+        <switch class="wx-switch-input" checked="{{switch1Checked}}" bindchange="switch1Change"/>
+      </view>
+    </view>
+  </view>
+
+  <wi-submitBtn text="保存" />
+</view>

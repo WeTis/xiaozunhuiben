@@ -1,0 +1,81 @@
+<!--pages/submitOrder/submitOrder.wxml-->
+<view class="pageFixed">
+  <!-- 地址 -->
+  <view class="addressBox" bindtap="jumpToAddress">
+    <view class="left">
+      <i class="iconfont icon-Group-"></i>
+    </view>
+    <view class="center">
+      <view>
+        <text class="name">魏同</text>
+        <text class="phone">15102972846</text>
+      </view>
+      <view class="addressDist">北京是海定区测试</view>
+    </view>
+    <view class="right">
+      <i class="iconfont icon-xiangyou"></i>
+    </view>
+  </view>
+  <!-- 书 -->
+  <view class="bookList" bindtap="jumpTobookOrder">
+     <view class="left">
+        <view class="img" wx:for="{{3}}">
+          <image mode="widthFix" src="/images/icons/me.png"></image>
+        </view>
+     </view>
+     <view class="right">
+        <text>共4件</text>  
+        <i class="iconfont icon-xiangyou"></i>
+     </view>
+  </view>
+
+  <!-- 快递 -->
+  <view class="express wi-table">
+    <view class="item">
+      <view class="left">选择快递</view>
+      <view class="right">
+        <text>系统默认快递</text>
+        <i class="iconfont icon-xiangyou"></i>
+      </view>
+    </view>
+
+    <view class="item">
+      <view class="left">
+        <text>发货时间</text>
+        <i class="iconfont icon-tishi1"></i>
+      </view>
+      <view class="right iconNext">
+        <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+            <view class="picker">
+              {{date}}
+            </view>
+          </picker>
+        <i class="iconfont icon-xiangyou"></i>
+      </view>
+    </view>
+
+    <view class="item">
+      <view class="left">借阅时间</view>
+      <view class="right">
+        2018-09-06至2018-09-08
+      </view>
+    </view>
+  </view>
+
+  <view class="express wi-table mesg">
+    <view class="item">
+      <view class="left">订单留言</view>
+      <view class="right ">
+        <textarea placeholder="选填，与平台协商一致" name="textarea"/>
+      </view>
+    </view>
+  </view>
+
+
+  <!-- 提交订单 -->
+  <!-- <view class="bottomBtn">
+    <view class="left"></view>
+    <view class="right">提交订单</view>
+  </view> -->
+  <wi-submitBtn text="提交订单" />
+</view>

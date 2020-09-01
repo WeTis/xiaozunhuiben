@@ -1,0 +1,25 @@
+/* pages/newAddress/newAddress.wxss */
+.table .item .left{
+  width: auto;
+}
+.table .item .rightm{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+}
+.right switch{
+  transform: scale(0.6)
+}
+/* .wx-switch-input{
+    width:82rpx !important;
+    height:36rpx !important; 
+}
+.wx-switch-input::before{
+    width:80rpx !important;
+    height: 36rpx !important;
+}
+.wx-switch-input::after{
+    width: 40rpx !important;
+    height: 36rpx !important;
+} */

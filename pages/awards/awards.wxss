@@ -1,0 +1,43 @@
+/* pages/awards/awards.wxss */
+.list{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+.item{
+  width: 330rpx;
+  height: 550rpx;
+  background-color: #fff;
+  border-radius: 8rpx;
+  margin-top: 30rpx;
+}
+.item image{
+  width: 300rpx;
+  height: 300rpx;
+  margin: 15rpx;
+}
+.name{
+  font-size: 28rpx;
+  font-weight: bold;
+  width: 100%;
+  padding: 15rpx 0;
+  padding-top: 0;
+  text-align: center;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.dist{
+  font-size: 26rpx;
+  color: #999;
+  width: 100%;
+  padding: 0 15rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+}

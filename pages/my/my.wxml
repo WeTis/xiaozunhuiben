@@ -1,53 +1,61 @@
-<view class="profile-header">
-  <view class="avatar-url">
-    <open-data type="userAvatarUrl"></open-data>
+<view class="page">
+  <view class="profile-header">
+    <view class="avatar-url">
+      <open-data type="userAvatarUrl"></open-data>
+    </view>
+    <open-data type="userNickName" class="nickname"></open-data>
   </view>
-  <open-data type="userNickName" class="nickname"></open-data>
-</view>
 
-<view class="icons">
-      <view class="icons-item" wx:for="{{iconsData}}">
-        <i class="iconfont {{item.icons}}"></i>
-        <view class="text">{{item.name}}</view>
+  <!-- 会员 -->
+  <view class="member">
+    会员卡片
+  </view>
+
+
+  <view class="icons">
+    <view class="icons-item" wx:for="{{iconsData}}">
+      <i class="iconfont {{item.icons}}"></i>
+      <view class="text">{{item.name}}</view>
+    </view>
+  </view>
+
+
+  <view class="nav">
+    <view class="nav-item">
+      <navigator class="content" hover-class="none" url="/pages/profile-playhistory/profile-playhistory">
+        <i class="iconfont icon-ziyuanldpi"></i>
+        <text class="text">我的钱包</text>
+        <i class="iconfont icon-xiangyou"></i>
+      </navigator>
+    </view>
+    <view class="nav-item">
+      <navigator class="content" hover-class="none" url="/pages/profile-bloghistory/profile-bloghistory">
+        <i class="iconfont icon-shoucang"></i>
+        <text class="text">到货提醒</text>
+        <i class="iconfont icon-xiangyou"></i>
+      </navigator>
+    </view>
+    <view class="nav-item">
+      <view class="content" bind:tap="jumpToAddress">
+        <i class="iconfont icon-weibiaoti--"></i>
+        <text class="text">收获地址</text>
+        <i class="iconfont icon-xiangyou"></i>
+      </view>
+    </view>
+    <view class="nav-item">
+      <view class="content" bind:tap="onTapQrCode">
+        <i class="iconfont icon-weibiaoti--"></i>
+        <text class="text">合伙推广</text>
+        <i class="iconfont icon-xiangyou"></i>
+      </view>
+    </view>
+    <view class="nav-item">
+      <view class="content" bind:tap="jumpTowishlist">
+        <i class="iconfont icon-weibiaoti--"></i>
+        <text class="text">心愿书单</text>
+        <i class="iconfont icon-xiangyou"></i>
       </view>
     </view>
 
-
-<view class="nav">
-  <view class="nav-item">
-    <navigator class="content" hover-class="none" url="/pages/profile-playhistory/profile-playhistory">
-      <i class="iconfont icon-ziyuanldpi"></i>
-      <text class="text">我的钱包</text>
-      <i class="iconfont icon-xiangyou"></i>
-    </navigator>
   </view>
-  <view class="nav-item">
-    <navigator class="content" hover-class="none" url="/pages/profile-bloghistory/profile-bloghistory">
-      <i class="iconfont icon-shoucang"></i>
-      <text class="text">到货提醒</text>
-      <i class="iconfont icon-xiangyou"></i>
-    </navigator>
-  </view>
-  <view class="nav-item">
-    <view class="content" bind:tap="onTapQrCode">
-      <i class="iconfont icon-weibiaoti--"></i>
-      <text class="text">收获地址</text>
-      <i class="iconfont icon-xiangyou"></i>
-    </view>
-  </view>
-  <view class="nav-item">
-    <view class="content" bind:tap="onTapQrCode">
-      <i class="iconfont icon-weibiaoti--"></i>
-      <text class="text">合伙推广</text>
-      <i class="iconfont icon-xiangyou"></i>
-    </view>
-  </view>
-  <view class="nav-item">
-    <view class="content" bind:tap="onTapQrCode">
-      <i class="iconfont icon-weibiaoti--"></i>
-      <text class="text">心愿书单</text>
-      <i class="iconfont icon-xiangyou"></i>
-    </view>
-  </view>
-
 </view>

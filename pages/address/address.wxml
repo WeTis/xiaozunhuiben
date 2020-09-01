@@ -1,0 +1,26 @@
+<!--pages/address/address.wxml-->
+<view class="address pageFixed" >
+  <wi-notice notice="暂不支持青海，新疆，西藏以及港澳台" />
+
+  <!-- 地址列表 -->
+  <view class="list">
+    <view class="item" wx:for="{{address}}">
+      <view class="top">
+        <text class="name">{{item.name}}</text>
+        <text class="phone">{{item.phone}}</text>
+      </view>
+      <view class="addressDest">{{item.address}}</view>
+      <view class="btns">
+        <view class="btn">删除</view>
+        <view class="btn">编辑</view>
+      </view>
+
+      <!-- 选择地址 默认隐藏-->
+      <view class="topRight" wx:if="{{checkStatus}}">
+        <radio value="{{item.id}}" checked="{{checkStatus == item.id}}" bindtap="checkRadios" data-id="{{item.id}}"/>
+      </view>
+    </view>
+  </view>
+
+  <wi-submitBtn text="新增地址" icon="icon-jia" bindtap="jumpToNewAddress"/>
+</view>

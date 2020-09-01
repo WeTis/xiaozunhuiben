@@ -1,5 +1,6 @@
 {
   "usingComponents": {
     "wi-book": "/component/book/book"
-  }
+  },
+  "navigationStyle": "custom"
 }

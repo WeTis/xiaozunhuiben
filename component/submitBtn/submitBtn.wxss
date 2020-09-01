@@ -1,0 +1,29 @@
+/* component/submitBtn/submitBtn.wxss */
+.wi-submitBtn{
+  background-color: #09bb07;
+  height: 88rpx;
+  width: 680rpx;
+  margin: 0 auto;
+  position: fixed;
+  bottom: 40rpx;
+  left: 35rpx;
+  border-radius: 44rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wi-submitBtn text{
+  font-size: 32rpx;
+  font-weight: bolder;
+  color: #fff;
+  
+}
+.wi-submitBtn i{
+  font-size: 24rpx;
+  color: #fff;
+  font-weight: bolder;
+  padding-right: 15rpx;
+}
+.wi-submitBtn .hide{
+  display: none;
+}

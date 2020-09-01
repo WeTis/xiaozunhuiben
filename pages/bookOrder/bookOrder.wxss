@@ -1,0 +1,24 @@
+/* pages/bookOrder/bookOrder.wxss */
+page{
+  background-color: #f3f3f3;
+  height: 100%;
+}
+.list{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 15rpx;
+  box-sizing: border-box;
+  
+}
+.list .item{
+  width: 50%;
+  padding: 15rpx;
+  box-sizing: border-box;
+}
+.list .item .wi-book{
+  background-color: #fff;
+  padding: 15rpx;
+  box-sizing: border-box;
+}

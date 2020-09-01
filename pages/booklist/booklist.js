@@ -1,4 +1,6 @@
 // pages/booklist/booklist.js
+import { api } from './module.js';
+const http = new api();
 Page({
 
   /**
@@ -11,35 +13,19 @@ Page({
         name: '全部'
       },
       {
-        name: '启蒙认识'
+        name: '0-2岁'
       },
       {
-        name: '情绪管理'
+        name: '2-5岁'
       },
       {
-        name: '行为习惯'
+        name: '5-12岁'
       },
-      {
-        name: '品格养成'
-      },
-      {
-        name: '自我保护'
-      },
-      {
-        name: '科普百科'
-      },
-      {
-        name: '儿童文学'
-      },
-      {
-        name: '专注力'
-      },
-      {
-        name: '中外经典'
-      }
     ],
+    pageNumber: 1,
+    list: [],
     book: {
-      src: '/images/icons/me.png',
+      src: '/images/book.png',
       name: '我大喊大叫的一天我大喊大叫的一天',
       labs: [
         {
@@ -53,12 +39,15 @@ Page({
     this.setData({
       selectType: name
     })
+    
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options)
+    let name = options.name;
+    this.getData(name)
   },
 
   /**
@@ -81,28 +70,38 @@ Page({
   onHide: function () {
 
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  getData(name) {
+    let that = this;
+    let params = {
+      pageNumber: this.data.pageNumber,
+      pageSize: 15,
+      label: name
+    }
+    http.getBookList(params)
+      .then(res => {
+        console.log(res);
+        let list = res.pageInfo.list;
+        that.initData(name, list)
+      })
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
+  initData(name,list) {
+    for(let i = 0; i < list.length; i++) {
+      list[i].labs = name + ',' + list[i].ageAround
+    }
+    this.setData({
+      list: list
+    })
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
+  handlerGobackClick() {
+    wx.navigateBack({
+      delta: 1
+    })
   },
-
+  handlerGohomeClick(){
+    wx.switchTab({
+      url: '/pages/index/index'
+    })
+  },
   /**
    * 用户点击右上角分享
    */

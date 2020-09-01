@@ -1,0 +1,134 @@
+/* pages/submitOrder/submitOrder.wxss */
+.pageFixed{
+  padding: 30rpx;
+  padding-bottom: 180rpx;
+}
+.addressBox{
+  position: relative;
+  width: 100%;
+  border-radius: 12rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 30rpx;
+  box-sizing: border-box;
+  align-items: center;
+}
+.addressBox::before {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background: -webkit-repeating-linear-gradient(135deg, #ff6c6c 0, #ff6c6c 20%, transparent 0, transparent 25%, #1989fa 0, #1989fa 45%, transparent 0, transparent 50%);
+    background: repeating-linear-gradient(-45deg, #ff6c6c 0, #ff6c6c 20%, transparent 0, transparent 25%, #1989fa 0, #1989fa 45%, transparent 0, transparent 50%);
+    background-size: 80px;
+    content: '';
+}
+.addressBox .left i{
+  color: greenyellow;
+  font-size: 50rpx;
+}
+.addressBox .center{
+  flex: 1;
+  padding: 0 30rpx;
+}
+.addressBox .center .name{
+  font-size: 30rpx; 
+  padding-right: 20rpx;
+}
+.addressBox .center .phone{
+  font-size: 26rpx;
+  color: #666; 
+}
+.addressBox .center .addressDist{
+  font-size: 26rpx;
+  /* color: #666;  */
+  padding: 25rpx 0;
+}
+
+
+.bookList{
+  width: 100%;
+  border-radius: 12rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 30rpx;
+  box-sizing: border-box;
+  align-items: center;
+  margin-top: 30rpx;
+}
+.bookList .left{
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.bookList .left .img{
+  width: 120rpx;
+  height: 150rpx;
+  margin-right: 30rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.bookList .left .img image{
+  width: 100%;
+}
+.bookList .right{
+  font-size: 32rpx;
+}
+.bookList .right i{
+  font-size: 32rpx;
+  color: #999;
+  padding-left: 20rpx;
+}
+
+.express{
+  margin: 0;
+  margin-top: 30rpx;
+  padding: 0 30rpx;
+}
+.express .left{
+  width: 200rpx !important;
+}
+.express .left i{
+  font-size: 36rpx;
+  color: #999;
+  padding-left: 10rpx;
+}
+.express .right i{
+  font-size: 36rpx;
+  color: #999;
+  padding-left: 10rpx;
+}
+.express .right{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 32rpx;
+}
+.express .iconNext .picker{
+  text-align: right;
+  color: #000;
+}
+
+.express .right textarea{
+  width: 100%;
+  height: 180rpx;
+}
+.mesg .item{
+  padding-top: 40rpx;
+}
+.mesg .item .left{
+  height: 32rpx;
+  line-height: 32rpx;
+}
+.mesg .item .right{
+  height: 180rpx;
+}

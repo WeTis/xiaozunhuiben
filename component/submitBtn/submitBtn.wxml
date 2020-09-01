@@ -1,0 +1,5 @@
+<!--component/submitBtn/submitBtn.wxml-->
+<view class="wi-submitBtn">
+    <i class="iconfont {{icon ? icon : 'hide'}}"></i>
+    <text>{{text}}</text>
+  </view>

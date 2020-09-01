@@ -6,7 +6,13 @@
     "pages/booklist/booklist",
     "pages/book/book",
     "pages/evaluatelist/evaluatelist",
-    "pages/card/card"
+    "pages/card/card",
+    "pages/wishlist/wishlist",
+    "pages/address/address",
+    "pages/newAddress/newAddress",
+    "pages/submitOrder/submitOrder",
+    "pages/bookOrder/bookOrder",
+    "pages/awards/awards"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -37,6 +43,11 @@
         "selectedIconPath": "images/icons/me.png"
       }
     ]
+  },
+  "usingComponents": {
+    "wi-notice": "/component/notice/notice",
+    "wi-submitBtn": "/component/submitBtn/submitBtn",
+    "navBar": "/component/navBar/navBar"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"
