@@ -1,2 +1,20 @@
 <!--pages/xzzj/xzzj.wxml-->
-<wi-blank  blank="{{blank}}" />
+<!-- <wi-blank  blank="{{blank}}" /> -->
+<view class="box">
+  <view class="item" style="background-color:#f3cd27;" bindtap="j"> 
+    <view class="t">绘本创作</view>
+    <view class="c">作品展示</view>
+  </view>
+  <view class="item" style="background-color:#fbd7e1;" bindtap="j"> 
+    <view class="t">孩子成长交流</view>
+    <!-- <view class="c">作品展示</view> -->
+  </view>
+  <view class="item" style="background-color:#d0dcbb;" bindtap="j"> 
+    <view class="t">绘聚益友</view>
+    <view class="c">自媒体分享</view>
+  </view>
+  <view class="item" style="background-color:#c9ade0;" bindtap="j"> 
+    <view class="t">荣誉赛事</view>
+    <view class="c">义工小组活动</view>
+  </view>
+</view>
