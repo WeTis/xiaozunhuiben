@@ -3,11 +3,10 @@ page{
 }
 .top{
   width: 100%;
-  height: 427rpx;
-  margin-bottom: 125rpx;
-  background-color: #FF8D40;
-  border-bottom-left-radius: 30%;
-  border-bottom-right-radius: 30%;
+  /* height: 427rpx; */
+  /* margin-bottom: 125rpx; */
+  /* padding-bottom: 50rpx; */
+  background-color: #fff;
 }
 .topNavBar .lxy-nav-bar__center{
     /* display: none; */
@@ -16,11 +15,18 @@ page{
     font-family:SourceHanSerifCN-Bold,SourceHanSerifCN;
     font-weight:bold; 
 }
+.searchBox{
+  width: 100%;
+  background-color: #fff;
+  position: fixed;
+  padding-bottom: 34rpx;
+  z-index: 999;
+}
 .search{
   width: 690rpx;
   height: 78rpx;
   border-radius: 39rpx;
-  background:rgba(255,255,255,0.17);
+  background:#F3F5F8;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
@@ -29,7 +35,7 @@ page{
 }
 .search i{
   padding-left: 26rpx;
-  color: #FFDFCA;
+  color: #B3B8BC;
   font-size: 42rpx;
 }
 .search input{
@@ -37,10 +43,11 @@ page{
   padding: 0 20rpx;
   height: 78rpx;
   line-height: 78rpx;
-  color: #fff;
+  color:#B3B8BC;
+   font-size: 30rpx;
 }
 .search .placeholderClass{
-   color:rgba(255,223,202,1);
+   color:#B3B8BC;
    font-size: 30rpx;
 }
 
@@ -48,7 +55,7 @@ page{
   width:690rpx;
   height:297rpx;
   margin: 0 auto;
-  margin-top: 20rpx;
+  margin-top: 112rpx;
   border-radius: 20rpx;
   overflow: hidden;
 }
@@ -62,7 +69,31 @@ page{
 }
 
 
-
+.swip{
+  margin-bottom: 20rpx;
+  /* padding: 20rpx; */
+  height: 120rpx;
+  background-color: #fff;
+}
+.swip swiper{
+  height: 100%;
+}
+.swiper-t {
+  height: 80rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 690rpx  ;
+  border-radius: 40rpx;
+  background-color: #f1f1f1;
+  margin: 20rpx auto;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+}
+.swiper-t .name{
+  color: #FFB85C;
+}
 .icons{
   width: 690rpx;
   height:418rpx;
@@ -76,7 +107,7 @@ page{
   
 }
 .icons .icons-item{
-  width: 33.3%;
+  width: 25%;
   font-size: 24rpx;
   display: flex;
   flex-direction: column;
@@ -97,6 +128,22 @@ page{
   line-height:37rpx;
 }
 
+.banner{
+  width: 100%;
+  height: 260rpx;
+  background-color: #fff;
+  box-sizing: border-box;
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.banner image{
+  width: 730rpx;
+  height: 210rpx;
+}
 
 .listBox{
   width: 690rpx;
@@ -112,11 +159,12 @@ page{
 }
 
 .tabBox {
-  width: 690rpx;
-  border-radius: 20rpx;
+  width: 100%;
+  padding: 0 30rpx;
+  margin-top: 20rpx;
+  padding-bottom: 30rpx;
+  box-sizing: border-box;
   background-color: #fff;
-  margin:  0  auto;
-  margin-top: 40rpx;
 }
 .title{
   width: 100%;
@@ -124,8 +172,7 @@ page{
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 40rpx 30rpx;
-  padding-right: 20rpx;
+  padding: 40rpx 0;
   box-sizing: border-box;
 }
 .title .title-name{
@@ -134,27 +181,61 @@ page{
   font-weight:500;
   color:rgba(67,52,44,1);
   line-height:49rpx;
+  position: relative;
+  padding-left: 20rpx;
+}
+ .title-name::after{
+  content: ' ';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 10rpx;
+  width: 10rpx;
+  height: 30rpx;
+  background-color: #82D1FF;
+  border-radius: 5rpx;
 }
 .title .moreBtn{
   font-size:26rpx;
   font-family:PingFangSC-Light,PingFang SC;
   font-weight:300;
-  color:rgba(255,141,64,1);
+  color:#8C9196;
   line-height:37rpx;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 .title .moreBtn i{
-  font-size:15rpx;
+  font-size:26rpx;
   padding-left: 10rpx;
 }
 
+.tabList{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 40rpx;
+}
+.tabList view{
+  padding: 0 35rpx;
+  height: 51rpx;
+  line-height: 51rpx;
+  font-size: 30rpx;
+  font-weight: 400;
+  color: #D8DCE4;
+}
+.tabList .active{
+  color: #FFB85C;
+  background: #FFF7EE;
+  border-radius: 24px;
+}
 
 .bookList{
   width: 100%;
-  padding: 30rpx;
-  padding-right: 20rpx;
+  padding: 30rpx 0;
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
@@ -167,11 +248,15 @@ page{
 
 
 .bookType{
-  margin-top: 50rpx;
+  /* margin-top: 50rpx; */
 }
 .bookType .type-item{
   background-color: #fff;
-  margin-bottom: 30rpx;
+  /* margin-bottom: 30rpx; */
+}
+.bookType .bookList{
+  padding-right: 20rpx;
+  padding-left: 30rpx;
 }
 .bookType .bookList .book{
   width: 310rpx;
@@ -182,78 +267,20 @@ page{
 }
 
 .newbookList{
-  padding: 0 30rpx;
-  padding-right: 20rpx;
-}
-.bookF{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
-  padding: 25rpx 0;
-  border-bottom:  2rpx solid #F0DED6;
-}
-.newBookb{
-  border-bottom: none;
-}
-.bookF .left{
-  width: 221rpx;
-  height: 221rpx;
-}
-.bookF .left image{
-  width: 100%;
-  height: 100%;
-} 
-.bookF .right {
-  width: 420rpx;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  /* flex-wrap: wrap; */
-  padding-left:30rpx;
-  box-sizing: border-box;
-}
-.bookF .right .bookF-name{
-  width: 100%;
-  overflow: hidden;
-  text-overflow:ellipsis;
-  white-space: nowrap;
-  font-size:26rpx;
-  font-family:PingFangSC-Regular,PingFang SC;
-  font-weight:400;
-  color:rgba(67,52,44,1);
-  line-height:37rpx;
-  
-}
-.bookF .right .bookF-author{
-  width: 100%;
-  overflow: hidden;
-  text-overflow:ellipsis;
-  white-space: nowrap;
-  font-size:22rpx;
-  font-family:PingFangSC-Regular,PingFang SC;
-  font-weight:400;
-  color:rgba(155,147,143,1);
-  line-height:30rpx;
-  
-}
-
-.bookF-lab{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  margin-top: 54rpx;
+  padding: 0 10rpx;
 }
-.bookF-lab-item{
-  padding: 0 15rpx;
-  height: 38rpx;
-  line-height: 38rpx;
-  text-align: center;
-  border-radius: 19rpx;
-  background-color: rgba(255,232,222,1);
-  font-size:22rpx;
-  font-family:PingFangSC-Regular,PingFang SC;
-  font-weight:400;
-  color:rgba(255,141,64,1);
+.newbookList .book{
+  width: 210rpx;
+  margin-right: 20rpx;
+}
+.newbookList .book:last-child{
+  margin-right: 0;
+}
+.newbookList .book wi-book .image image{
+  width: 210rpx;
+  height: 210rpx;
 }

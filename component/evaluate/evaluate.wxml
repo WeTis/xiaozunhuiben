@@ -1,17 +1,19 @@
 <!--component/evaluate/evaluate.wxml 评价-->
+<wxs module='filter' src='../../utils/tool.wxs'></wxs>
 <view class="evaluate">
-  <view class="left">
-    <image class="ave" src="{{evaluate.src}}"></image>
-  </view>
-  <view class="right">
-    <view class="name">{{evaluate.name}}</view>
-    <view class="time">{{evaluate.time}}</view>
-    <view class="content">{{evaluate.content}}</view>
-    <view class="score">
-      <text>星级评分</text>
-      <view class="start" >
-        <i class="iconfont icon-shoucang {{index+1 <= evaluate.score ? 'active':''}}" wx:for="{{5}}"></i>
-      </view>
+  <view class="top">
+    <view class="top-left">
+      <image class="ave" src="{{evaluate.userImage}}"></image>
     </view>
+    <view class="name">{{evaluate.userName}}</view>
+    <view class="start" >
+        <i class="font_family icon-star-full {{index+1 <= evaluate.level ? 'active':''}}" wx:for="{{5}}"></i>
+      </view>
+  </view>
+  <view class="centen">
+      {{evaluate.content}}
+  </view>
+  <view class="time">
+    {{filter._filterTimestamp(evaluate.createDate)}}
   </view>
 </view>

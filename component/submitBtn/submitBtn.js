@@ -5,7 +5,11 @@ Component({
    */
   properties: {
     icon: String,
-    text: String
+    text: String,
+    showBtn: { // 属性名
+      type: Boolean,
+      value: false
+    }
   },
   options: {
     styleIsolation: 'apply-shared'

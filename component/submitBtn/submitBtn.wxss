@@ -1,6 +1,6 @@
 /* component/submitBtn/submitBtn.wxss */
 .wi-submitBtn{
-  background-color: #09bb07;
+  background-color: #2AB1E7;
   height: 88rpx;
   width: 680rpx;
   margin: 0 auto;
@@ -15,8 +15,7 @@
 .wi-submitBtn text{
   font-size: 32rpx;
   font-weight: bolder;
-  color: #fff;
-  
+  color: #fff; 
 }
 .wi-submitBtn i{
   font-size: 24rpx;
@@ -26,4 +25,13 @@
 }
 .wi-submitBtn .hide{
   display: none;
+}
+button{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  left: 0;
+  top: 0;
+  right: 0;
 }

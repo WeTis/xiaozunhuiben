@@ -1,0 +1,150 @@
+/* pages/orderDetail/orderDetail.wxss */
+/* pages/submitOrder/submitOrder.wxss */
+.pageFixed{
+  padding: 30rpx;
+  padding-bottom: 180rpx;
+}
+.addressBox{
+  position: relative;
+  width: 100%;
+  border-radius: 12rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 30rpx;
+  box-sizing: border-box;
+  align-items: center;
+}
+.addressBox::before {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background: -webkit-repeating-linear-gradient(135deg, #ff6c6c 0, #ff6c6c 20%, transparent 0, transparent 25%, #1989fa 0, #1989fa 45%, transparent 0, transparent 50%);
+    background: repeating-linear-gradient(-45deg, #ff6c6c 0, #ff6c6c 20%, transparent 0, transparent 25%, #1989fa 0, #1989fa 45%, transparent 0, transparent 50%);
+    background-size: 80px;
+    content: '';
+}
+.addressBox .left i{
+  color: greenyellow;
+  font-size: 50rpx;
+}
+.addressBox .center{
+  flex: 1;
+  padding: 0 30rpx;
+}
+.addressBox .center .name{
+  font-size: 30rpx; 
+  padding-right: 20rpx;
+}
+.addressBox .center .phone{
+  font-size: 26rpx;
+  color: #666; 
+}
+.addressBox .center .addressDist{
+  font-size: 26rpx;
+  /* color: #666;  */
+  padding: 25rpx 0;
+}
+.addressBox .center .addressDist text{
+  display: inline-block;
+}
+
+
+.bookList{
+  width: 100%;
+  border-radius: 12rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 30rpx;
+  box-sizing: border-box;
+  align-items: center;
+  margin-top: 30rpx;
+}
+.bookList .left{
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.bookList .left .img{
+  width: 120rpx;
+  height: 150rpx;
+  margin-right: 30rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.bookList .left .img image{
+  width: 100%;
+}
+.bookList .right{
+  font-size: 28rpx;
+  color: #8C9196;
+}
+.bookList .right i{
+  font-size: 28rpx;
+  color: #8C9196;
+  padding-left: 10rpx;
+}
+
+.flexList{
+  width: 100%;
+  border-radius: 8rpx;
+  background-color: #fff;
+  padding: 20rpx;
+  margin-top: 20rpx;
+}
+.flexList .item{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 24rpx;
+  color: #8C9196;
+  margin: 10rpx;
+}
+.flexList .item .text{
+  flex: 1;
+}
+.copy{
+  padding: 0 15rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  border-radius: 15rpx;
+  border: 1px solid #1989fa;
+  color: #1989fa;
+  margin-left: 20rpx;
+}
+
+.c{
+  padding: 20rpx;
+  background-color: #ffffff;
+  border-radius: 8rpx;
+  margin-top: 30rpx;
+  display: flex;
+  flex-direction: row;
+}
+.c view{
+  flex: 1;
+  height: 50rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  font-size: 24rpx;
+}
+.c .left {
+  border-right: 1px solid #000;
+}
+.c i{
+  color: #1989fa;
+  font-size: 30rpx;
+  padding-right: 10rpx;
+}

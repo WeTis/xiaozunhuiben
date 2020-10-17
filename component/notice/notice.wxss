@@ -13,3 +13,6 @@
   background-color: #fffbe8;
   color: #ed6a0c;
 }
+.wi-tip i{
+  padding-right: 10rpx;
+}

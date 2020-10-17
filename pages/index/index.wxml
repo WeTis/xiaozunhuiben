@@ -1,12 +1,15 @@
 <view>
   <view class="top">
-    <!-- <view class="title">小樽絵本欢迎您</view> -->
-    <navBar background='#FF8D40' ext-class="topNavBar" back="{{false}}" color="#ffffff" title='小樽絵本欢迎您' />
+    <navBar background='#ffffff' ext-class="topNavBar" back="{{false}}" color="#232629" title='小樽絵本' />
     <!-- 搜索 -->
-    <view class="search">
-      <i class="iconfont icon-sousuo"></i>
-      <input placeholder="搜索" placeholder-class="placeholderClass"></input>
+    <view class="searchBox">
+      <view class="search">
+        <i class="font_family icon-sousuo"></i>
+        <input placeholder="搜索"  placeholder-class="placeholderClass"
+        confirm-type="search" bindconfirm="search"></input>
+      </view>
     </view>
+    
 
     <view class="wi-swiper">
         <swiper indicator-dots indicator-color="rgba(255,255,255,0.4)" indicator-active-color="#fff"	autoplay>
@@ -27,51 +30,93 @@
         </swiper-item>
       </swiper>
     </view>
-  </view>
 
-  <view class="icons">
-    <view class="icons-item" wx:for="{{iconsData}}">
+    <view class="icons">
+    <view class="icons-item" wx:for="{{iconsData}}" bindtap="clickItem" wx:key="name" data-name="{{item.name}}">
       <image src="{{item.img}}"></image>
       <view class="text">{{item.name}}</view>
     </view>
   </view>
   
   <!-- 业务介绍 -->
-  <view class="listBox">
+  <!-- <view class="listBox">
     <image src="/images/yw.png"></image>
-    <image src="/images/hy.png"></image>
+    <image src="/images/hy.png" bindtap="jumpToHy"></image>
+  </view> -->
+
+ 
   </view>
-  <view class="tabBox">    
-    <!-- 新书推荐 -->
-    <view class="newBook">
+  
+   <view class="swip">
+    <swiper	autoplay>
+        <swiper-item>
+          <view class="swiper-t" >
+             <view class="name">小樽公告：</view>
+             <view class="text">小樽绘本介绍</view>
+          </view>
+        </swiper-item>
+        <swiper-item>
+          <view class="swiper-t">
+            <!-- <view class="name">小樽公告：</view> -->
+             <view class="text" style="padding-left: 40rpx;">借阅绘本的规则</view>
+          </view>
+        </swiper-item>
+      </swiper>
+  </view>
+
+  <!-- banner -->
+  <view class="banner">
+    <image src="/images/banner.png" bindtap="jumpToHy"></image>
+  </view>
+  <!-- 新书推荐 -->
+    <view class="tabBox">
       <view class="title">
         <view class="title-name">新书推荐</view>
-        <view class="moreBtn" bindtap="jumpToBookList">更多<i class="iconfont icon-xiangyou"></i></view>
+        <view class="moreBtn" bindtap="jumpToBookList" data-name="新书推荐">
+          <text>更多</text>
+          <i class="font_family icon-shouyegengduojiantou"></i>
+        </view>
       </view>
-      <view class="newbookList " >
-        <view class="bookF {{index == 2 ? 'newBookb':''}}" wx:for="{{3}}" >
-          <view class="left">
-            <image mode="aspectFit" src="{{newBook.src}}"></image>
-          </view>
-          <view class="right">
-            <view class="bookF-name">{{newBook.name}}</view>
-            <view class="bookF-author">作者：{{newBook.author}}</view>
-            <view class="bookF-lab">
-                <view class="bookF-lab-item" wx:for="{{newBook.labs}}">推荐：{{item.name}}岁</view>
-            </view>
-          </view>
-        </view>     
+      <view class="newbookList" >
+        <view class="book" wx:for-item="itemBook" wx:for="{{newBook}}" wx:key="id">
+            <wi-book book="{{itemBook}}" showauthor="{{true}}" showLab="{{true}}"/>
+        </view>      
       </view>
     </view>
+  
+  <!-- 年龄专区 -->
+  <view class="tabBox">
+    <view class="title">
+      <view class="title-name">年龄分区</view>
+      <view class="moreBtn" bindtap="jumpToBookList" data-name="">
+        <text>更多</text>
+        <i class="font_family icon-shouyegengduojiantou"></i>
+      </view>
+    </view>
+    <view class="tabList">
+      <view class="{{tab == item.name ? 'active':''}}" wx:for="{{ageList}}" wx:key="name" bindtap="clickTab" data-index="{{item.name}}">{{item.name}}</view>
+    </view>
+    <view class="newbookList" >
+      <view class="book" wx:for-item="itemBook" wx:for="{{ageBook}}" wx:key="id">
+          <wi-book book="{{itemBook}}"  showLab="{{true}}"/>
+      </view>      
+    </view>
+  </view>
+
+
+  <view class="tabBox">    
     <!-- 分类书籍 -->
     <view class="bookType">
-      <view class="type-item" wx:for="{{listType}}">
+      <view class="type-item" wx:for="{{listType}}" wx:key="name">
         <view class="title">
           <view class="title-name">{{item.name}}</view>
-          <view class="moreBtn" bindtap="jumpToBookList" data-name="{{item.name}}">更多<i class="iconfont icon-xiangyou" ></i></view>
+          <view class="moreBtn" bindtap="jumpToBookList" data-name="{{item.name}}">
+            <text>更多</text>
+            <i class="font_family icon-shouyegengduojiantou"></i>
+          </view>
         </view>
-        <view class="bookList" >
-          <view class="book" wx:for-item="itemBook" wx:for="{{item.list}}">
+        <view class="newbookList" >
+          <view class="book" wx:for-item="itemBook" wx:for="{{item.list}}" wx:key="id">
             <wi-book book="{{itemBook}}" />
           </view>     
         </view>

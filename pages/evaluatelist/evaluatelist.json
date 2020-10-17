@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "评价",
   "usingComponents": {
     "wi-evaluate": "/component/evaluate/evaluate"
   }

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "wi-evaluate": "/component/evaluate/evaluate"
+  },
+  "navigationBarTitleText": "商品详情"
+}

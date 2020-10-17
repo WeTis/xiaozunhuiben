@@ -1,0 +1,152 @@
+/* pages/shop/card/card.wxss */
+/* pages/card/card.wxss */
+.cardBOx{
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  position: relative;
+  overflow: auto;
+  background-color: #f3f3f3;
+  padding-bottom: 120rpx;
+}
+.list{
+  width: 100%;
+  padding: 20rpx;
+  padding-bottom: 0;
+  box-sizing: border-box;
+}
+.item{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 20rpx;
+  background-color: #fff;
+  border-radius: 8rpx;
+  margin-bottom: 20rpx;
+}
+.item .left{
+   height: 100%;
+    padding-right: 20rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.item .left i{
+  font-size: 50rpx;
+ 
+  color: #8C9196;
+}
+.item .left .blue{
+  color: #06A4E3;
+}
+.blue{
+  color: #06A4E3;
+}
+.item .center {
+  margin-right: 20rpx;
+  width: 140rpx;
+  height: 140rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.item .center image{
+  width: 100%;
+  height: 100%;
+
+}
+.item .right {
+  flex: 1;
+  height: 140rpx;
+  font-size: 30rpx;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bottomFixed{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  z-index: 1;
+}
+.bottomFixed .left {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.bottomFixed .left .select{
+  height: 100%;
+  font-size: 30rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #999;
+  margin-right: 40rpx
+}
+.bottomFixed .left .select i{
+  font-size: 40rpx;
+  margin: 30rpx;
+  margin-right: 20rpx;
+}
+.bottomFixed .left .numText{
+  font-size: 30rpx;
+  color: #666;
+}
+.bottomFixed .left .num{
+  color: #06A4E3;
+}
+
+.bottomFixed .right{
+  height: 100%;
+  width: 200rpx;
+  text-align: center;
+  line-height: 100rpx;
+  color: #fff;
+  font-size: 32rpx;
+  font-weight: bolder;
+  background-color: #06A4E3;
+}
+.bottomFixed .de {
+   background-color: red;
+}
+
+
+.item .right .price-num{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.numBox{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  border: 1px solid #d3d3d3;
+}
+.numBox view{
+  height: 50rpx;
+  padding: 0 20rpx;
+  line-height: 50rpx;
+}
+.numBox .num{
+  border-left: 1px solid #d3d3d3;
+  border-right: 1px solid #d3d3d3;
+  font-size: 24rpx;
+}

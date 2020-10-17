@@ -5,22 +5,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-    book: {
-      src: '/images/icons/me.png',
-      name: '我大喊大叫的一天我大喊大叫的一天',
-      labs: [
-        {
-          name: '情绪管理'
-        }
-      ]
-    }
+    list: [],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let info = JSON.parse(options.info);
+    this.setData({
+      list: info
+    })
   },
 
   /**

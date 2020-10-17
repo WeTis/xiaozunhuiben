@@ -1,0 +1,16 @@
+<view class="pageBOx">
+
+<!-- 商品列表 -->
+<list wx:if="{{clickName == '商品'}}" />
+<!-- 购物车 -->
+<card wx:if="{{clickName == '购物车'}}" />
+<!-- 订单 -->
+<order wx:if="{{clickName == '订单'}}" />
+<!-- 底部导航 -->
+<view class="nav">
+  <view class="item-nav {{clickName == item.name ? 'active': ''}}" wx:for="{{nav}}" data-name="{{item.name}}" bindtap="clickNav" wx:key="id">
+     <i class="font_family {{item.icon}}"></i>
+     <view class="text">{{item.name}}</view>
+  </view>
+</view>
+</view>

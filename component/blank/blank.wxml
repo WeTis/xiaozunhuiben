@@ -1,0 +1,7 @@
+<view class="wi-blank">
+  <view class="wi-blank-content">
+      <i wx:if="{{blank.icon}}" class="font_family {{blank.icon ? blank.icon : 'hide'}}"></i>
+      <view class="wi-blank-dist" wx:if="{{blank.dist}}">{{blank.dist}}</view>
+      <view class="wi-blank-btn" wx:if="{{blank.btnText}}">{{blank.btnText}}</view>
+  </view>
+</view>

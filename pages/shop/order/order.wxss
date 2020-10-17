@@ -1,0 +1,195 @@
+/* pages/shop/order/order.wxss */
+/* pages/orderList/orderList.wxss */
+.pageFixeds{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #f1f1f1;
+}
+.bottom_scroll{
+  width:100%;
+  white-space:nowrap;
+  overflow:hidden;
+  line-height:110rpx;
+  height: 110rpx;
+  background-color: #fff;
+}
+.tab-item{
+  display: inline-block;
+  width: 20%;
+  font-size: 28rpx;
+  text-align: center;
+  height: 110rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+.active::after{
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 50rpx;
+  height: 8rpx;
+  bottom: 5rpx;
+  border-radius: 4rpx;
+  left: 50%;
+  margin-left: -25rpx;
+  background-color: #2AB1E7;
+}
+
+.list{
+  padding: 20rpx;
+  flex: 1;
+  overflow: auto;
+  
+}
+.list .item{
+  background-color: #fff;
+  border-radius: 8rpx;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+}
+.item .name{
+  font-size: 26rpx;
+}
+.item .time{
+  font-size: 24rpx;
+  color: #8C9196;
+}
+.toolBtn{
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+}
+.toolBtn .btn{
+  padding: 0 30rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  border-radius: 25rpx;
+  border: 1px solid #2AB1E7;
+  font-size: 24rpx;
+  margin-left: 20rpx;
+  color: #2AB1E7;
+}
+.bookList{
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  align-items: center;
+  padding: 10rpx 0;
+}
+.bookList .left{
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.bookList .left .img{
+  width: 120rpx;
+  height: 150rpx;
+  margin-right: 30rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.bookList .left .img image{
+  width: 100%;
+}
+.bookList .right{
+  font-size: 28rpx;
+  color: #8C9196;
+}
+.bookList .right i{
+  font-size: 28rpx;
+  color: #8C9196;
+  padding-left: 10rpx;
+}
+
+wi-blank{
+  flex: 1;
+}
+
+.dialog{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.dialog .content{
+  width: 640rpx;
+  border-radius: 18rpx;
+  background-color: #fff;
+  padding: 40rpx;
+  padding-bottom: 0;
+  box-sizing: border-box;
+}
+.dialog .title{
+  font-weight: 500;
+  line-height: 48rpx;
+  text-align: center;
+}
+.rowlist{
+  padding: 30rpx 0;
+}
+.rowItem{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  min-height: 88rpx;
+  border-bottom: 1px solid #ebedf0;
+}
+.rowItem .rowname{
+  font-size: 28rpx;
+  color: #646566;
+  width: 140rpx;
+}
+.rowItem input{
+      color: #323233;
+      flex: 1;
+      font-size: 26rpx;
+}
+.rowItem textarea{
+  color: #323233;
+  flex: 1;
+  height: 200rpx;
+  font-size: 26rpx;
+  margin: 20rpx 0;
+}
+.diaLogBtn{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.diaLogBtn .btn{
+  flex: 1;
+  height: 96rpx;
+  line-height: 96rpx;
+  text-align: center;
+  color: #323233;
+  font-size: 32rpx;
+}
+.start i{
+  margin-left: 10rpx;
+  color: #8C9196;
+  font-size: 30rpx;
+}
+.start .active{
+  color: #FFB85C;
+}

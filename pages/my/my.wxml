@@ -1,61 +1,152 @@
 <view class="page">
   <view class="profile-header">
+    <navBar background='rgba(0, 0, 0, 0)' ext-class="topNavBar" back="{{false}}" color="#ffffff" title='我的' />
     <view class="avatar-url">
       <open-data type="userAvatarUrl"></open-data>
     </view>
     <open-data type="userNickName" class="nickname"></open-data>
+    <!-- <view class="leve">
+      {{userLabel == '次数会员' ? '次数会员-剩余次数' + cardCount : userLabel}}
+    </view> -->
+    <view class="info" bindtap="jumpTouserInfo">
+      <text>个人信息</text>
+      <i class="font_family icon-gengduojiantou"></i>
+    </view>
   </view>
 
   <!-- 会员 -->
-  <view class="member">
+  <!-- <view class="member">
     会员卡片
-  </view>
+  </view> -->
 
 
   <view class="icons">
-    <view class="icons-item" wx:for="{{iconsData}}">
-      <i class="iconfont {{item.icons}}"></i>
+    <view class="icons-item" wx:for="{{iconsData}}" bindtap="jumpToOrderList" data-id="{{item.id}}" wx:key="id">
+      <i class="font_family {{item.icons}}"></i>
       <view class="text">{{item.name}}</view>
     </view>
   </view>
+ 
+ <view class="card" bindtap="jumpUs">
+  <image src="/images/joinus.png" mode="widthFix"></image>
+ </view>
 
+ <view class="card" bindtap="clickBuy">
+  <image src="/images/lpk.png" mode="widthFix"></image>
+ </view>
+  <!-- 常用工具 -->
+  <view class="toolBox">
+    <view class="title">常用工具</view>
+    <view class="ls">
 
-  <view class="nav">
-    <view class="nav-item">
-      <navigator class="content" hover-class="none" url="/pages/profile-playhistory/profile-playhistory">
-        <i class="iconfont icon-ziyuanldpi"></i>
-        <text class="text">我的钱包</text>
-        <i class="iconfont icon-xiangyou"></i>
-      </navigator>
+      <view class="ls-item" bindtap="jumpToHy">
+        <iconfont name="bianzu16" class="i" size="25"/>
+        <view class="desc">加入会员</view>
+      </view>
+
+      <!-- <view class="ls-item" bindtap="jumpTouserInfo">
+        <iconfont name="ziyuan" class="i" size="25"/>
+        <view class="desc">我的信息</view>
+      </view> -->
+
+      <view class="ls-item" bindtap="jumpToQb">
+        <iconfont name="wodeqianbao" class="i" size="25"/>
+        <view class="desc">我的押金</view>
+      </view>
+      
+      <view class="ls-item" bindtap="jumpToAddress">
+        <iconfont name="shouhuodizhi" class="i" size="25"/>
+        <view class="desc">收货地址</view>
+      </view>
+
+      <view class="ls-item" bindtap="jumpUs">
+        <iconfont name="zhaomu" class="i" size="25"/>
+        <view class="desc">招贤纳士</view>
+      </view>
+
+      <view class="ls-item" bindtap="jumpTowishlist">
+        <iconfont name="xinyuanshudan" class="i" size="25"/>
+        <view class="desc">心愿书单</view>
+      </view>
+      
+      <view class="ls-item" bindtap="jumpToHelp">
+        <iconfont name="bangzhuzhongxin" class="i" size="25"/>
+        <view class="desc">帮助中心</view>
+      </view>
+
+      <view class="ls-item con" bindtap="open">
+        <iconfont name="kefu1" class="i" size="25"/>
+        <view class="desc">联系客服</view>
+        <!-- <button open-type="contact" bindcontact="handleContact"></button> -->
+      </view>
+
+      <view class="ls-item" bindtap="jumpUs">
+        <iconfont name="hezuohuobanxianxing" class="i" size="25"/>
+        <view class="desc">商业合作</view>
+      </view>
+
+      
     </view>
-    <view class="nav-item">
-      <navigator class="content" hover-class="none" url="/pages/profile-bloghistory/profile-bloghistory">
-        <i class="iconfont icon-shoucang"></i>
-        <text class="text">到货提醒</text>
-        <i class="iconfont icon-xiangyou"></i>
-      </navigator>
+  </view>
+
+  <!-- 联系客服 -->
+  <view class="dialog" wx:if="{{showDialog}}">
+    <view class="content">
+      <view class="title">提示</view>
+      <view class="text">
+        服务时间段9:00-12：00、14:00-17:00
+      </view>
+      <view class="diaLogBtn">
+        <view class="btn" bindtap="hideDialog">取消</view>
+        <view class="btn" style="color: #ee0a24" bindtap="hideDialog">确定
+         <button open-type="contact" bindcontact="handleContact"></button>
+        </view>
+      </view>
     </view>
+  </view>
+  <!-- <view class="nav">
     <view class="nav-item">
-      <view class="content" bind:tap="jumpToAddress">
-        <i class="iconfont icon-weibiaoti--"></i>
-        <text class="text">收获地址</text>
-        <i class="iconfont icon-xiangyou"></i>
+      <view class="content" bind:tap="jumpTouserInfo">
+        <iconfont name="ziyuan" class="i" size="22"/>
+        <text class="text">我的信息</text>
+        <i class="font_family icon-gengduojiantou"></i>
       </view>
     </view>
     <view class="nav-item">
-      <view class="content" bind:tap="onTapQrCode">
-        <i class="iconfont icon-weibiaoti--"></i>
-        <text class="text">合伙推广</text>
-        <i class="iconfont icon-xiangyou"></i>
+      <view class="content" bind:tap="jumpToQb">
+        <iconfont name="wodeqianbao" class="i" size="22"/>
+        <text class="text">我的钱包</text>
+        <i class="font_family icon-gengduojiantou"></i>
       </view>
     </view>
     <view class="nav-item">
       <view class="content" bind:tap="jumpTowishlist">
-        <i class="iconfont icon-weibiaoti--"></i>
+        <iconfont name="daohuotixing" class="i" size="22"/>
+        <text class="text">到货提醒</text>
+        <i class="font_family icon-gengduojiantou"></i>
+      </view>
+    </view>
+    <view class="nav-item">
+      <view class="content" bind:tap="jumpToAddress">
+        <iconfont name="shouhuodizhi" class="i" size="22"/>
+        <text class="text">收获地址</text>
+        <i class="font_family icon-gengduojiantou"></i>
+      </view>
+    </view>
+    <view class="nav-item">
+      <view class="content" bind:tap="onTapQrCode">
+        <iconfont name="hehuotuiguang" class="i" size="22"/>
+        <text class="text">合伙推广</text>
+        <i class="font_family icon-gengduojiantou"></i>
+      </view>
+    </view>
+    <view class="nav-item">
+      <view class="content" bind:tap="jumpTowishlist">
+        <iconfont name="xinyuanshudan" class="i" size="22"/>
         <text class="text">心愿书单</text>
-        <i class="iconfont icon-xiangyou"></i>
+        <i class="font_family icon-gengduojiantou"></i>
       </view>
     </view>
 
-  </view>
+  </view> -->
 </view>

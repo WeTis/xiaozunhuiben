@@ -1,0 +1,29 @@
+/* pages/znxs/znxs.wxss */
+
+.box .name{
+  font-size: 28rpx;
+  padding-left: 40rpx;
+  padding-top: 50rpx;
+  padding-bottom: 20rpx;
+}
+.box .list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0 20rpx;
+}
+.list .item{
+  width: 137.5rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  background-color: #F7F7FA;
+  text-align: center;
+  border-radius: 25rpx;
+  font-size: 28rpx;
+  color: #B3B8BC;
+  margin: 10rpx 20rpx;
+}
+.list .active{
+  color: #fff;
+  background-color: #06A4E3;
+}

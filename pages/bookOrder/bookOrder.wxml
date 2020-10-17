@@ -1,6 +1,6 @@
 <!--pages/bookOrder/bookOrder.wxml-->
 <view class="list">
-  <view class="item" wx:for="{{4}}">
-      <wi-book book="{{book}}" />
+  <view class="item" wx:for="{{list}}">
+      <wi-book book="{{item}}" />
   </view>
 </view>

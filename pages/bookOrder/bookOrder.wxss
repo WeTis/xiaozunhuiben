@@ -2,23 +2,35 @@
 page{
   background-color: #f3f3f3;
   height: 100%;
+  overflow: auto;
 }
 .list{
-  width: 100%;
+  padding: 20rpx;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  padding: 15rpx;
   box-sizing: border-box;
+  justify-content: space-between;
+  align-content: flex-start;
+}
+.item{
+  width: 345rpx;
+  height: 400rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20rpx;
+  border-radius: 10rpx;
+  background: #fff;
+}
+.item wi-book{
+  width: 310rpx;
   
 }
-.list .item{
-  width: 50%;
-  padding: 15rpx;
-  box-sizing: border-box;
-}
-.list .item .wi-book{
-  background-color: #fff;
-  padding: 15rpx;
-  box-sizing: border-box;
+.item wi-book .image image{
+  width: 310rpx;
+  height: 310rpx;
 }

@@ -1,0 +1,73 @@
+<!--pages/wishlist/wishlist.wxml  心愿书单-->
+<view class="pageFixed">
+  <!-- 提示 -->
+
+  <!-- <wi-notice notice="请提交您想看或者建议的书单，我们评估后会尽快上架" /> -->
+ <view class="table wi-table">
+    <view class="item">
+      <view class="left">电话</view>
+      <view class="right">
+        <input placeholder="请输入电话" value="{{bookName}}" bindinput="getbookName"></input>
+      </view>
+    </view>
+  </view>
+
+  <view class="dist">宝贝信息填写</view>
+
+  <view class="wi-table table">
+  <view class="item pic">
+      <view class="left">头像</view>
+      <view class="right">
+        <view class="uplodImg" wx:if="{{!uploadImg}}" bindtap="uploadFn">
+          <i class="font_family icon-jia"></i>
+        </view>
+        <image wx:else src="{{uploadImg}}" mode="scaleToFill" bindtap="uploadFn"></image>
+      </view>
+    </view>
+    <view class="item">
+      <view class="left">昵称</view>
+      <view class="right">
+        <input placeholder="请填写昵称" value="{{nickName}}" bindinput="getbooksName"></input>
+      </view>
+    </view>
+    <view class="item">
+      <view class="left">性别</view>
+      <view class="right">
+        <input placeholder="请填写性别" bindinput="getbookPress" value="{{sex}}"></input>
+      </view>
+    </view>
+    <view class="item">
+      <view class="left">生日</view>
+      <view class="right iconNext">
+          <picker mode="date" value="{{br}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+      <view class="picker">
+        {{br ? br : '请选择日期'}}
+      </view>
+    </picker>
+        <i class="font_family icon-gengduojiantou"></i>
+      </view>
+    </view>
+    <view class="item">
+      <view class="left">邮箱</view>
+      <view class="right">
+        <input placeholder="请填写邮箱" bindinput="getbookemail" value="{{email}}"></input>
+      </view>
+    </view>
+    <view class="item">
+      <view class="left">我是</view>
+      <view class="right">
+        <input placeholder="请填写与宝贝的关系" bindinput="getbookg" value="{{g}}"></input>
+      </view>
+    </view>
+    <view class="item">
+      <view class="left">成长记录</view>
+      <view class="right textarea">
+        <textarea placeholder="孩子的原生家庭以及成长记录" value="{{content}}" bindinput="getcontent" name="textarea"/>
+      </view>
+    </view>
+  </view>
+
+  <view class="btn" bindtap="submit" >提交</view>
+</view>
+
+

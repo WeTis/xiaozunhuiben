@@ -1,1 +1,4 @@
 /* pages/evaluatelist/evaluatelist.wxss */
+.lists{
+  padding: 20rpx;
+}

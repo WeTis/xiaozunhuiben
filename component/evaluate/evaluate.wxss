@@ -4,38 +4,62 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  border-bottom: 1px solid #999;
-  padding: 20rpx 0;
 }
-.evaluate .left{
-  width: 200rpx;
+.evaluate .top{
+  width: 100%;
+  margin: 12rpx 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
 }
-.left image {
-  width: 180rpx;
-  height: 180rpx;
+.top-left {
+  width: 46rpx;
+  height: 46rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10rpx;
+} 
+.top-left image{
+  width: 100%;
+  height: 100%;
 }
-.evaluate .right{
+.name{
   flex: 1;
+  font-size: 22rpx;
+  font-weight: 500;
+  color: #232629;
 }
-.content{
-  font-size: 24rpx;
-}
-.score{
-  font-size: 24rpx;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  height: 30rpx;
-  margin-top: 20rpx;
-}
-.score .start{
-  margin-left: 30rpx;
+.start {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
 }
-.score .start i.active{
-  color: yellow;
+.start i{
+  margin-left: 10rpx;
+  color: #8C9196;
+  font-size: 22rpx;
+}
+.start .active{
+  color: #FFB85C;
+}
+.centen{
+  width: 100%;
+  padding-left: 56rpx;
+  box-sizing: border-box; 
+  font-size: 22rpx;
+  font-weight: 400;
+  color: #55585C;
+  line-height: 35rpx;
+}
+.time{
+  width: 100%;
+  margin: 20rpx 0;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 22rpx;
+  font-weight: 400;
+  color: #B3B8BC;
+  line-height: 30rpx;
 }

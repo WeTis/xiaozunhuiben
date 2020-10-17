@@ -1,7 +1,8 @@
 <!--pages/booklist/booklist.wxml-->
 <view class="viewBox pageFixed">
   <!-- 搜索 -->
-  <navBar title='' background='#fff' back="{{true}}" home="{{true}}" bindback="handlerGobackClick" bindhome="handlerGohomeClick">
+  <view wx:if="{{isShowNavBar}}">
+    <navBar  title='' background='#fff' back="{{true}}" home="{{true}}" bindback="handlerGobackClick" bindhome="handlerGohomeClick">
         <view class='lxy-nav-bar-search' slot="center">
             <view class='lxy-nav-bar-search__icon' />
             <view class='lxy-nav-bar-search__input'>
@@ -9,15 +10,26 @@
             </view>
         </view>
     </navBar>
+  </view>
+  
+    <!-- 标题 -->
+    <view wx:if="{{!isShowNavBar}}">
+      <navBar  title='{{params.label}}' back="{{true}}" bindback="handlerGobackClick" background='#fff'  >
+    </navBar>
+    </view>
+    
   <!-- 类型 -->
-  <view class="typeList">
-    <view class="{{item.name == selectType ? 'active':'' }} item" wx:for="{{listType}}" bindtap="clickType" data-name="{{item.name}}">{{item.name}}</view>
+  <view class="typeList" wx:if="{{isShowNavBar && params.label != '妈妈的书'}}">
+    <view class="{{item.value == selectType ? 'active':'' }} item" wx:for="{{listType}}" bindtap="clickType" data-name="{{item.value}}">{{item.name}}</view>
   </view>
 
   <!-- 书单列表 -->
-  <view class="bookList">
+  <view class="bookList" wx:if="{{list.length > 0}}">
     <view class="item" wx:for="{{list}}">
       <wi-book book="{{item}}" showLab="{{true}}" />
     </view>
   </view>
+
+  <!-- 空页 -->
+  <wi-blank  blank="{{blank}}" wx:else />
 </view>

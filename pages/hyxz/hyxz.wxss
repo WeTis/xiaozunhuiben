@@ -1,0 +1,11 @@
+/* pages/hyxz/hyxz.wxss */
+.box{
+  padding: 0 30rpx;
+  font-size: 30rpx;
+  color: #7a7a7a;
+}
+.name{
+  padding-top: 60rpx;
+  padding-bottom: 30rpx;
+
+}

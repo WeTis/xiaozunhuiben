@@ -1,4 +1,8 @@
 // pages/address/address.js
+import { api } from './module.js';
+const http = new api();
+const app = getApp()
+
 Page({
 
   /**
@@ -44,7 +48,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getData()
   },
 
   /**
@@ -53,6 +57,60 @@ Page({
   onHide: function () {
 
   },
+  getData() {
+    let data = {
+      type: 4,
+      pageSize: 100,
+      pageNumber: 1
+    }
+    http.userAdress(data)
+    .then(res => {
+      let list = res.pageInfo.list;
+
+      this.setData({
+        address: list
+      })
+    })
+  },
+  delectFn(id) {
+    let data = {
+      type: 3,
+      id: id
+    }
+    http.userAdress(data)
+      .then(res => {
+        if(res.status == '9999') {
+          this.getData();
+        }else {
+          wx.showToast({
+            title: '删除失败',
+            icon: 'none'
+          })
+        }
+      })
+  },
+  delect(e) {
+    let id = e.currentTarget.dataset.id;
+    wx.showModal({
+      title: '提示',
+      content: '确定要删除此地址吗?',
+      success(res) {
+        if (res.confirm) {
+           this.delectFn(id);
+        } else if (res.cancel) {
+
+        }
+      }
+    })
+  },
+  edit(e) {
+    let index = e.currentTarget.dataset.index;
+    let info = JSON.stringify((this.data.address)[index]);
+
+    wx.navigateTo({
+      url: '/pages/newAddress/newAddress?info='+info,
+    })
+  },
   jumpToNewAddress() {
     wx.navigateTo({
       url: '/pages/newAddress/newAddress',
@@ -60,35 +118,18 @@ Page({
   },
   checkRadios(e) {
     let id = e.currentTarget.dataset.id;
+    let index = e.currentTarget.dataset.index;
     this.setData({
       checkStatus: id
     })
+    let data = (this.data.address)[index]
+    wx.setStorage({
+      key: "address",
+      data: data,
+      success: () => {
+        wx.navigateBack();
+      }
+    })
   },
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
+  
 })

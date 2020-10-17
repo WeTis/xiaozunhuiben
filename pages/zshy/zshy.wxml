@@ -1,0 +1,38 @@
+<!--pages/zshy/zshy.wxml-->
+<!-- <view class="tab">
+  <view class="tab-item">所有</view>
+  <view class="tab-item">已购买</view>
+  <view class="tab-item">已使用</view>
+</view> -->
+<view class="pageFixed">
+<scroll-view class="bottom_scroll" scroll-x="true" scroll-left="{{x}}" scroll-with-animation="{{true}}">
+      <view class="tab-item {{tabActive == item.id ? 'active':''}}" data-id="{{item.id}}" data-index="{{index}}" bindtap="clickTab"  wx:for="{{tab}}" wx:key="{{item.id}}">
+        {{item.name}}
+      </view>
+  </scroll-view>
+
+<view class="box">
+  <view class="item {{item.id != 4 ? 'col':''}} {{selectIndex == index ? 'active':''}}"  wx:for="{{list}}" bindtap="clickBuy" data-id="{{index}}">
+    <image src="{{item.bg}}" class="bg"></image>
+    <view class="price">
+      <image src="{{item.tag}}" class="tag"></image>
+      <text>价值</text>
+      <text>￥</text>
+      <text class="num">{{item.price}}</text>
+    </view>
+    <view class="c">
+      <image src="{{item.lo}}" class="lo"></image>
+      <view class="name">{{item.name}}</view>
+      <!-- <view class="time">到期</view> -->
+    </view>
+  </view>
+</view>
+
+
+<wi-submitBtn text="购买" wx:if="{{tabActive == 1 }}" bindtap="submit" />
+<wi-submitBtn text="赠送" wx:if="{{tabActive == 2 && selectIndex == -1 }}" bindtap="ss" />
+<wi-submitBtn text="赠送" wx:if="{{tabActive == 2 && selectIndex != -1}}" showBtn  />
+
+
+
+</view>

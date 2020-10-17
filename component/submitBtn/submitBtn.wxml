@@ -1,5 +1,7 @@
 <!--component/submitBtn/submitBtn.wxml-->
 <view class="wi-submitBtn">
-    <i class="iconfont {{icon ? icon : 'hide'}}"></i>
+    <i class="font_family {{icon ? icon : 'hide'}}"></i>
     <text>{{text}}</text>
+    <button  catchtap='share' wx:if="{{showBtn}}" open-type="share">
+     </button>
   </view>

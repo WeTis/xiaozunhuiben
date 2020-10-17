@@ -1,0 +1,68 @@
+<!--pages/shop/card/card.wxml-->
+<!-- <view class="cardBOx">
+   <view class="list">
+      <view class="item">
+          <view class="left">
+            <image src="/images/1.jpg" mode="aspectFit"></image>
+          </view>
+          <view class="right">
+            <view class="name">八音盒</view>
+            <view class="price-num">
+                <view class="price">55</view>
+                <view class="numBox">
+                  <view class="pr">-</view>
+                  <view class="num">1</view>
+                  <view class="add">+</view>
+                </view>
+            </view>
+          </view>
+      </view>
+   </view>
+</view> -->
+
+<view class="cardBOx">
+  <view class="list" wx:if="{{list.length > 0}}">
+    <view class="item" wx:for="{{list}}" bindtap="jumpToBooks" data-id="{{item.productId}}" wx:key="productId">
+      <view class="left" catchtap="checkedFn" data-index="{{index}}">
+        <i class="font_family icon-xianshi_xuanze" wx:if="{{!item.check}}"></i>
+        <i class="font_family icon-xuanze blue" wx:if="{{item.check}}"></i>
+      </view>
+      <view class="center">
+        <image src="{{item.productImage}}" mode="aspectFit"></image>
+      </view>
+      <view class="right">
+        <view>{{item.productName}}</view>
+        <view class="price-num">
+                <view class="price">{{item.productPrice}}</view>
+                <view class="numBox">
+                  <view class="pr" catchtap="preNum" data-index="{{index}}">-</view>
+                  <view class="num">{{item.productCount}}</view>
+                  <view class="add" catchtap="addNum" data-index="{{index}}">+</view>
+                </view>
+            </view>
+      </view>
+    </view>
+  </view>
+  <wi-blank  blank="{{blank}}" wx:if="{{list.length == 0}}" />
+  <!-- 底部全选 -->
+  <view class="bottomFixed">
+    <view class="left">
+      <view class="select" bindtap="allCheckedFn">
+        <i class="font_family icon-xianshi_xuanze" wx:if="{{!allChecked}}"></i>
+        <i class="font_family icon-xuanze blue" wx:if="{{allChecked}}"></i>
+        <text>全选</text>
+      </view>
+      <view class="numText">
+        <text class="t">价格：</text>
+        <text class="num">{{money}}</text>
+        <!-- <text>书位</text> -->
+      </view>
+    </view>
+    <view class="right de" wx:if="{{count > 0}}" bindtap="delectCard">
+      删除
+    </view>
+    <view class="right" wx:if="{{count > 0}}" bindtap="jumpTosubmitOrder">
+      去下单
+    </view>
+  </view>
+</view>

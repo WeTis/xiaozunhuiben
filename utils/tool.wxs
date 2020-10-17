@@ -5,8 +5,38 @@ function _splitInfo(value, deg) {
   return arr;
 }
 
+function _filterTimestamp(value) {
+
+
+  fmt1 = value.substring(0, 19);
+  var reg = getRegExp("-", "g");
+  var fmt2 = value.replace(reg, '/');
+  fmt2 = fmt2.split('.')[0];
+  reg = getRegExp("T", "g");
+  fmt2 = fmt2.replace(reg, ' ');
+
+  var time = getDate(fmt2);
+
+  // return fmt2;
+  // var time = getDate(timestamp);
+  var year = time.getFullYear();
+  var month = time.getMonth() + 1;
+  var date = time.getDate();
+  var hour = time.getHours();
+  var minute = time.getMinutes();
+  var second = time.getSeconds();
+
+  month = month < 10 ? "0" + month : month;
+  date = date < 10 ? "0" + date : date;
+  hour = hour < 10 ? "0" + hour : hour;
+  minute = minute < 10 ? "0" + minute : minute;
+  second = second < 10 ? "0" + second : second;
+
+  return year + "-" + month + "-" + date + "  " + hour + ":" + minute;
+}
 
 module.exports = {
   _splitInfo: _splitInfo,
+  _filterTimestamp: _filterTimestamp
 
 }

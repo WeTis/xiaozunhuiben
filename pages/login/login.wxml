@@ -1,0 +1,12 @@
+<view class="pageFixed">
+   <view class="center">
+    <image src="/images/logo.png"></image>
+    <view class="btns">
+        <view class="btn">微信登录
+        <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" >微信登录</button>
+        </view>
+        
+        <view class="text" bindtap="cancelLogin">暂不登录</view>
+    </view>
+   </view>
+</view>

@@ -6,7 +6,8 @@
   </view>
   
   <view class="name">{{book.productName}}</view>
+  <view class="author name" wx:if="{{showauthor}}">作者：{{book.bookAuthor}}</view>
   <view class="labs" wx:if="{{showLab}}">
-    <view class="lab" wx:for="{{filter._splitInfo(book.labs,',')}}">{{item}}</view>
+    <view class="lab" wx:for="{{filter._splitInfo(book.labs,',')}}" wx:key="item">{{item}}</view>
   </view>
 </view>

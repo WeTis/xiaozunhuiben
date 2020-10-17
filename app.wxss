@@ -18,7 +18,7 @@ page{
 .wi-table{
   margin: 30rpx;
   background-color: #fff;
-  border-radius: 16rpx;
+  border-radius: 10rpx;
 }
 .wi-table .item{
   width: 100%;
@@ -32,21 +32,32 @@ page{
   width: 160rpx;
   height: 88rpx;
   line-height: 88rpx;
-  font-size: 32rpx;
+  font-size: 28rpx;
 }
 .wi-table .item .right{
   flex: 1;
   height: 88rpx;
 }
+.wi-table .item .right.textarea{
+  flex: 1;
+  height: 188rpx;
+}
+.wi-table .item .right textarea{
+  width: 100%;
+  height: 180rpx;
+  font-size: 28rpx;
+  color: #8C9196;
+}
 .wi-table .item .right input{
   height: 88rpx;
   line-height: 88rpx;
-  font-size: 30rpx;
+  font-size: 28rpx;
+  color: #8C9196;
 }
 .wi-table .item .iconNext{
   text-align: right;
   line-height: 88rpx;
-  color: #999;
+  color: #8C9196;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -56,8 +67,8 @@ page{
 }
 .wi-table .iconNext .picker{
   text-align: left;
-  font-size: 30rpx;
-  color: #999;
+  font-size: 28rpx;
+  color: #8C9196;
 }
 
 

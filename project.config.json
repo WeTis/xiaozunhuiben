@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -24,7 +24,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.12.0",
-	"appid": "wx6d408104df0509e4",
+	"appid": "wx0e5a1aae12cb0cce",
 	"projectname": "%E5%B0%8F%E6%A8%BD%E7%BB%98%E6%9C%AC",
 	"debugOptions": {
 		"hidedInDevtools": []
@@ -123,6 +123,90 @@
 					"id": -1,
 					"name": "获奖作品",
 					"pathName": "pages/awards/awards",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/my/my",
+					"pathName": "pages/my/my",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "订单列表",
+					"pathName": "pages/orderList/orderList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "订单详情",
+					"pathName": "pages/orderDetail/orderDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "智能选书",
+					"pathName": "pages/znxs/znxs",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "登录",
+					"pathName": "pages/login/login",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "会员",
+					"pathName": "pages/hy/hy",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "会员须知",
+					"pathName": "pages/hyxz/hyxz",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "钱包",
+					"pathName": "pages/qb/qb",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "商城首页",
+					"pathName": "pages/shop/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "商品详情",
+					"pathName": "pages/shop/detail/detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "用户信息",
+					"pathName": "pages/userInfo/userInfo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "赠送会员",
+					"pathName": "pages/zshy/zshy",
 					"scene": null
 				}
 			]

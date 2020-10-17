@@ -1,26 +1,39 @@
 <!--pages/book/book.wxml-->
+<wxs module='filter' src='../../utils/tool.wxs'></wxs>
 <view class="bookDetail">
   <!-- 顶部图片 -->
   <view class="imgs">
-    <image src="/images/icons/me.png" mode="aspectFit "></image>
+    <image src="{{product.productImage}}" mode="aspectFit "></image>
   </view>
   <!-- 书籍简介 -->
   <view class="pro">
-    <view class="title">我的大喊大叫的一天</view>
+    <view class="title">{{product.productName}}</view>
+    
     <view class="lab">
-      <view class="lab-item">0-3岁</view>
+      <view class="lab-item" wx:for="{{filter._splitInfo(labs,',')}}" wx:key="item">{{item}}</view>
     </view>
-    <view class="author">作者：帕特森</view>
-    <view class="author">出版社：新世纪出版社</view>
+
+    <view class="authorAll">
+      <view class="author">已读人数：{{product.saleCount}}</view>
+    </view>
+
+    <view class="authorAll">
+      <view class="author">作者：{{product.bookAuthor}}</view>
+    </view>
+    <view class="authorAll">
+      <view class="author">出版社：{{product.bookPress}}</view>
+    </view>
+    
   </view>
   <!-- 服务介绍 -->
-  <view class="introduce" bindtap="showPropBoxFn">
+  <!-- <view class="introduce" bindtap="showPropBoxFn">
     <view class="l">服务保障</view>
     <view class="c">正品保障·往返包邮·百万商品·安全消毒</view>
     <i class="font_family icon-gengduojiantou"></i>
-  </view>
+  </view> -->
   <!-- 租聘流程 -->
-  <view class="stepBox">
+  <!-- <view class="stepBOxAll">
+   <view class="stepBox">
     <view class="title">
       <view class="name">租赁流程：</view>
       <view class="moreBtn">
@@ -30,86 +43,95 @@
     </view>
     <view class="step">
       <view class="step-item">
-        <i class="font_family icon-xuanzeshangpin"></i>
+        <iconfont name="xuanzeshangpin" size="30"/>
         <text>选择商品</text>
         <i class="font_family icon-gengduojiantou p"></i>
       </view>
       <view class="step-item">
-        <i class="font_family icon-zhifuzuyajin"></i>
+        <iconfont name="zhifuzuyajin" size="30"/>
         <text>支付租押金</text>
         <i class="font_family icon-gengduojiantou p"></i>
       </view>
       <view class="step-item">
-        <i class="font_family icon-shouhuotiyan"></i>
+        <iconfont name="shouhuotiyan" size="30"/>
         <text>收货体验</text>
         <i class="font_family icon-gengduojiantou p"></i>
       </view>
       <view class="step-item">
-        <i class="font_family icon-yuyueguihuan"></i>
+        <iconfont name="yuyueguihuan" size="30"/>
         <text>预约归还</text>
       </view>
     </view>
-  </view>
-  <!-- 归还须知 -->
-  <view class="stepBox">
-    <view class="title">
-      <view class="name">归还须知：</view>
-      <view class="moreBtn">
-        <text>更多</text>
-        <i class="font_family icon-gengduojiantou"></i>
+    </view>
+    <view class="stepBox stepBox2">
+      <view class="title">
+        <view class="name">归还须知：</view>
+        <view class="moreBtn">
+          <text>更多</text>
+          <i class="font_family icon-gengduojiantou"></i>
+        </view>
+      </view>
+      <view class="step">
+        <view class="step-item">
+          <iconfont name="yuyuekuaidi" size="30"/>
+          <text>预约快递</text>
+          <i class="font_family icon-gengduojiantou p"></i>
+        </view>
+        <view class="step-item">
+          <iconfont name="mianfeiqujian" size="30"/>
+          <text>免费取件</text>
+          <i class="font_family icon-gengduojiantou p"></i>
+        </view>
+        <view class="step-item">
+          <iconfont name="cangkujiesuan" size="30"/>
+          <text>仓库结算</text>
+          <i class="font_family icon-gengduojiantou p"></i>
+        </view>
+        <view class="step-item">
+          <iconfont name="dingdanwancheng" size="30"/>
+          <text>订单完成</text>
+        </view>
       </view>
     </view>
-    <view class="step">
-      <view class="step-item">
-        <i class="font_family icon-yuyuekuaidi"></i>
-        <text>预约快递</text>
-        <i class="font_family icon-gengduojiantou p"></i>
-      </view>
-      <view class="step-item">
-        <i class="font_family icon-mianfeiqujian"></i>
-        <text>免费取件</text>
-        <i class="font_family icon-gengduojiantou p"></i>
-      </view>
-      <view class="step-item">
-        <i class="font_family icon-cangkujiesuan"></i>
-        <text>仓库结算</text>
-        <i class="font_family icon-gengduojiantou p"></i>
-      </view>
-      <view class="step-item">
-        <i class="font_family icon-dingdanwancheng"></i>
-        <text>订单完成</text>
-      </view>
-    </view>
+  </view> -->
+  <!-- tab -->
+  <view class="tab">
+    <view class="tab-item {{tabActive == 1 ? 'active':''}}" bindtap="changeActive1">商品介绍</view>
+    <view class="tab-item {{tabActive == 2 ? 'active':''}}" bindtap="changeActive2">用户评价</view>
   </view>
   <!-- 评价 -->
-  <view class="evaluateList stepBox">
-    <view class="title">
+  <view class="evaluateList stepBox" wx:if="{{tabActive == 2}}">
+    <!-- <view class="title">
       <view class="name">用户评价：</view>
       <view class="moreBtn" bindtap="jumpToEvaluatelist">
         <text>更多</text>
         <i class="font_family icon-gengduojiantou"></i>
       </view>
+    </view> -->
+    <view class="lists" wx:if="{{clist.length > 0}}">
+      <wi-evaluate wx:for="{{clist}}" evaluate="{{item}}"/>
     </view>
-    <view class="lists">
-      <wi-evaluate wx:for="{{3}}" evaluate="{{evaluate}}"/>
-    </view>
+    <view class="dist" wx:else>暂无评价</view>
   </view>
   <!-- 商品介绍 -->
-  <view class="de">
-    <view class="title">商品简介：</view>
+  <view class="de" wx:if="{{tabActive == 1}}">
+    <!-- <view class="title">商品简介：</view> -->
     <view class="text">
-      英国绘本作家、画家，生于博尔顿，现居剑桥。最初只是画绘本草图，孩子们上学后，瑞贝卡开始到剑桥艺术学院攻读儿童书绘画硕士学位，并以绘本创作作为毕业作品。瑞贝卡的作品多半从她的孩子身上获取灵感，具有游戏性和趣味性，很受孩子欢迎。2012年，瑞贝卡凭借《我的大喊大叫的一天！》荣获罗尔德·达尔幽默童书奖。
+      {{product.productDetail}}
     </view>
-    <image mode="widthFix" src="/images/m.jpg"></image>
+    <image mode="widthFix"  src="{{item}}" wx:for="{{product.detailImage}}" wx:key="item"></image>
   </view>
 
   <!-- 底部购买 -->
   <view class="buyBox">
-    <view class="left">
-      <i class="font_family icon-ziyuanldpi"></i>
+    <view class="left" bindtap="card">
+      <iconfont name="shujia-xuanzhong" size="25"/>
       <text>书架</text>
     </view>
-    <view class="right">加入书架</view>
+    <view class="right" bindtap="addCard" wx:if="{{product.productStock != 0 && !cardproductId}}">加入书架</view>
+    <view class="right" bindtap="tixi" wx:if="{{product.productStock == 0 && !cardproductId}}" >到货提醒</view>
+    <view class="right" style="background:#666;" wx:if="{{cardproductId}}" >已添加书架</view>
+    
   </view>
 </view>
 
@@ -117,7 +139,10 @@
 <view class="propBox" wx:if="{{showPropBox}}" >
    <view class="shadow" bindtap="showPropBoxFn"></view>
    <view class="content">
-     <view class="closeBtn" bindtap="showPropBoxFn" >X</view>
+     <view class="closeBtn" bindtap="showPropBoxFn" >
+      
+      <i class="font_family icon-close"></i>
+     </view>
       <view class="item" wx:for="{{des}}">
         <view class="left">
           <i class="font_family icon-gengduojiantou"></i>

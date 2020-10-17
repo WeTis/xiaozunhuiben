@@ -1,0 +1,92 @@
+<!--pages/orderList/orderList.wxml-->
+<view class="pageFixeds">
+  <!-- tab -->
+   <scroll-view class="bottom_scroll" scroll-x="true" scroll-left="{{x}}" scroll-with-animation="{{true}}">
+      <view class="tab-item {{tabActive == item.id ? 'active':''}}" data-id="{{item.id}}" data-index="{{index}}" bindtap="clickTab"  wx:for="{{tab}}" wx:key="{{item.id}}">
+        {{item.name}}
+      </view>
+  </scroll-view>
+  
+  <!-- 订单列表 -->
+  <view class="list" wx:if="{{list.length > 0}}">
+    <view class="item" wx:for="{{list}}" wx:key="id">
+      <view class="name">租赁订单</view>
+      <view class="content bookList"  bindtap="jumpToOrderDetail" data-orderid="{{item.id}}" data-ordernumber="{{item.orderNumber}}"
+      data-enddate="{{item.endTime}}"
+      data-startdate="{{item.startTime}}"
+      >
+        <view class="left">
+            <view class="img" wx:for-item="mm" wx:for="{{item.productList}}" wx:key="id">
+              <image mode="widthFix" src="{{mm.productImage}}"></image>
+            </view>
+        </view>
+        <view class="right">
+            <text>共{{item.productList.length}}件</text>  
+            <i class="font_family icon-gengduojiantou"></i>
+        </view>
+      </view>
+      <view class="time">借阅时间： {{item.startTime}} 至 {{item.endTime}}</view>
+      <view class="toolBtn">
+        <view class="btn" wx:if="{{item.orderStatus == 4}}" bindtap="changeOrderStatus" data-orderid="{{item.id}}" data-status="{{9}}">确认收货</view>
+        <view class="btn" wx:if="{{item.orderStatus == 5}}" bindtap="open" data-orderId="{{item.id}}" data-ordernumber="{{item.orderNumber}}" data-status="{{8}}">已寄出</view>
+        <view class="btn" wx:if="{{item.orderStatus == 8}}" bindtap="edit" data-orderId="{{item.id}}" data-ordernumber="{{item.orderNumber}}" data-status="{{8}}">修改快递信息</view>
+        <view class="btn" wx:if="{{item.orderStatus == 9}}" bindtap="pingjia" data-index="{{index}}" >评价</view>
+        <view class="btn" wx:if="{{item.orderStatus == 1 || item.orderStatus == 4}}" bindtap="tuikaun" data-orderId="{{item.id}}" data-ordernumber="{{item.orderNumber}}"  data-index="{{index}}" >申请退款</view>
+        <view class="btn" wx:if="{{item.orderStatus == 6}}" style="color:red;border-color:red;">正在退款</view>
+        <view class="btn" wx:if="{{item.orderStatus == 10}}" style="color:red;border-color:red;">已完成</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 空页 -->
+  <wi-blank  blank="{{blank}}" wx:else />
+
+  <!-- 填写快递信息 -->
+  <view class="dialog" wx:if="{{showDialog}}">
+    <view class="content">
+      <view class="title">快递信息</view>
+      <view class="rowlist">
+        <view class="rowItem">
+            <view class="rowname">快递公司：</view>
+            <!-- <view class="right"> -->
+              <input placeholder="请输入快递公司" value="{{kdName}}" bindinput="getkdName"></input>
+            <!-- </view> -->
+        </view>
+        <view class="rowItem">
+            <view class="rowname">快递单号：</view>
+            <!-- <view class="right"> -->
+              <input placeholder="请输入快递单号" value="{{kdNumber}}" bindinput="getkdNumber"></input>
+            <!-- </view> -->
+        </view>
+      </view>
+      <view class="diaLogBtn">
+        <view class="btn" bindtap="hideDialog">取消</view>
+        <view class="btn" style="color: #ee0a24" bindtap="submiKd">确定</view>
+      </view>
+    </view>
+  </view>
+  <!-- 评价 -->
+  <view class="dialog" wx:if="{{showDialogP}}">
+    <view class="content">
+      <view class="title">评价</view>
+      <view class="rowlist">
+        <view class="rowItem">
+            <view class="rowname">评分：</view>
+            <view class="right start">
+                <i class="font_family icon-star-full {{index+1 <= score ? 'active':''}}" data-index="{{index+1}}" bindtap="changeScore" wx:for="{{5}}" wx:key="item"></i>
+            </view>
+        </view>
+        <view class="rowItem">
+            <view class="rowname">评价内容：</view>
+            <!-- <view class="right"> -->
+             <textarea  placeholder="请输入评价内容" value="{{content}}" bindinput="getcontent" name="textarea"/>
+            <!-- </view> -->
+        </view>
+      </view>
+      <view class="diaLogBtn">
+        <view class="btn" bindtap="hideDialogP">取消</view>
+        <view class="btn" style="color: #ee0a24" bindtap="submiKdP">确定</view>
+      </view>
+    </view>
+  </view>
+</view>

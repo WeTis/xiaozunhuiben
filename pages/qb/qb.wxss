@@ -1,0 +1,52 @@
+/* pages/qb/ab.wxss */
+.box{
+  background-color: #2AB1E7;
+}
+.b{
+  width: 690rpx;
+  margin: 30rpx;
+  background-color: #fff;
+  border-radius: 12rpx;
+  padding: 50rpx 0;
+  text-align: center;
+}
+.b .title{
+  font-size: 36rpx;
+  padding-bottom: 30rpx;
+}
+.b .num{
+  font-size: 40rpx;
+  font-weight: bolder;
+}
+
+.head{
+  font-size: 34rpx;
+  font-weight: bold;
+  padding-bottom: 30rpx;
+}
+.item{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* padding: 30rpx; */
+  padding: 10rpx 0;
+}
+.item .left{
+ flex: 1;
+ text-align: center;
+}
+.item .right{
+  flex: 1;
+  text-align: center;
+}
+.btn{
+  width: 500rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  border-radius: 44rpx;
+  text-align: center;
+  background-color: #2AB1E7;
+  color: #fff;
+  margin: 0 auto;
+  margin-top: 40rpx;
+}

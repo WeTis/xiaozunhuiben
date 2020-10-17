@@ -1,4 +1,5 @@
 <!--pages/address/address.wxml-->
+<wxs module='filter' src='../../utils/tool.wxs'></wxs>
 <view class="address pageFixed" >
   <wi-notice notice="暂不支持青海，新疆，西藏以及港澳台" />
 
@@ -6,18 +7,22 @@
   <view class="list">
     <view class="item" wx:for="{{address}}">
       <view class="top">
-        <text class="name">{{item.name}}</text>
-        <text class="phone">{{item.phone}}</text>
+        <text class="name">{{item.receiveName}}</text>
+        <text class="phone">{{item.receivePhone}}</text>
       </view>
-      <view class="addressDest">{{item.address}}</view>
+      <view class="addressDest">
+        <text wx:for="{{filter._splitInfo(item.receiveAdress,'$$')}}">
+          {{item}}
+        </text>
+      </view>
       <view class="btns">
-        <view class="btn">删除</view>
-        <view class="btn">编辑</view>
+        <view class="btn" bindtap="delect" data-id="{{item.id}}">删除</view>
+        <view class="btn" bindtap="edit" data-index="{{index}}">编辑</view>
       </view>
 
       <!-- 选择地址 默认隐藏-->
       <view class="topRight" wx:if="{{checkStatus}}">
-        <radio value="{{item.id}}" checked="{{checkStatus == item.id}}" bindtap="checkRadios" data-id="{{item.id}}"/>
+        <radio value="{{item.id}}" checked="{{checkStatus == item.id}}" bindtap="checkRadios" data-id="{{item.id}}" data-index="{{index}}"/>
       </view>
     </view>
   </view>

@@ -1,0 +1,39 @@
+<view class="nav">
+    <view class="nav-item">
+      <view class="content" bind:tap="jumpTouserInfo">
+        <text class="text">书袋发货说明</text>
+        <i class="font_family icon-gengduojiantou"></i>
+      </view>
+    </view>
+    <view class="nav-item">
+      <view class="content" bind:tap="jumpToQb">
+        <text class="text">书袋绘本说明</text>
+        <i class="font_family icon-gengduojiantou"></i>
+      </view>
+    </view>
+    <view class="nav-item">
+      <view class="content" bind:tap="jumpTowishlist">
+        <text class="text">收到的绘本破损怎么办？</text>
+        <i class="font_family icon-gengduojiantou"></i>
+      </view>
+    </view>
+    <view class="nav-item">
+      <view class="content" bind:tap="jumpToAddress">
+        <text class="text">书袋归还说明</text>
+        <i class="font_family icon-gengduojiantou"></i>
+      </view>
+    </view>
+    <view class="nav-item">
+      <view class="content" bind:tap="onTapQrCode">
+        <text class="text">如何购买喜欢的绘本？</text>
+        <i class="font_family icon-gengduojiantou"></i>
+      </view>
+    </view>
+    <view class="nav-item">
+      <view class="content" bind:tap="jumpTowishlist">
+        <text class="text">物流须知</text>
+        <i class="font_family icon-gengduojiantou"></i>
+      </view>
+    </view>
+
+  </view>

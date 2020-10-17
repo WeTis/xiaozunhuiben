@@ -1,0 +1,128 @@
+/* pages/zshy/zshy.wxss */
+.pageFixed{
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 148rpx;
+  align-content: flex-start;
+}
+.bottom_scroll{
+  width:100%;
+  white-space:nowrap;
+  overflow:hidden;
+  line-height:110rpx;
+  height: 110rpx;
+  background-color: #fff;
+}
+.tab-item{
+  display: inline-block;
+  width: 20%;
+  font-size: 28rpx;
+  text-align: center;
+  height: 110rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+.tab-item.active::after{
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 50rpx;
+  height: 8rpx;
+  bottom: 5rpx;
+  border-radius: 4rpx;
+  left: 50%;
+  margin-left: -25rpx;
+  background-color: #2AB1E7;
+}
+
+.box{
+  flex: 1;
+  overflow: auto;
+  
+}
+.item{
+  width: 686rpx;
+  height: 280rpx;
+  margin: 20rpx auto;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14rpx;
+}
+.item.active{
+  border: 2px solid #2AB1E7;
+
+}
+.item .bg{
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+}
+.price{
+  position: absolute;
+  width: 168rpx;
+  height: 64rpx;
+  right: 0;
+  top: 30rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #C25900;
+}
+.col .price{
+  color: #fff;
+}
+.price text{
+  position: relative;
+  z-index: 1;
+}
+.price image{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.c{
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #D27B00;
+}
+.c image{
+  width: 96rpx;
+  height: 96rpx;
+  margin-bottom: 24rpx;
+}
+.c .name{
+  height: 34rpx;
+  font-size: 34rpx;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  line-height: 34rpx;
+  text-align: center;
+}
+.c .time{
+  height: 24rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  
+  line-height: 24rpx;
+  margin-top: 16rpx;
+  text-align: center;
+}
+.col .c{
+  color: #fff;
+}

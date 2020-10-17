@@ -1,4 +1,7 @@
 // pages/card/card.js
+import { isLogin, isBuy, orderNumFN} from '../../utils/util.js';
+import { api } from './module.js';
+const http = new api();
 Page({
 
   /**
@@ -6,33 +9,15 @@ Page({
    */
   data: {
     list: [
-      {
-        id: 1,
-        name: '最喜爱的妈妈（宫西达也）',
-        img: '/images/1.jpg',
-        check: false
-      },
-      {
-        id: 2,
-        name: '最喜爱的妈妈（宫西达也）',
-        img: '/images/1.jpg',
-        check: false
-      },
-      {
-        id: 3,
-        name: '最喜爱的妈妈（宫西达也）',
-        img: '/images/1.jpg',
-        check: false
-      },
-      {
-        id: 4,
-        name: '最喜爱的妈妈（宫西达也）',
-        img: '/images/1.jpg',
-        check: false
-      }
     ],
     allChecked: false,
-    count: 0
+    count: 0,
+    hInfo: {},
+    blank: {
+      icon: 'icon-shujia-xuanzhong',
+      dist: '暂无绘本',
+      btnText: null
+    },
   },
   
   /**
@@ -53,9 +38,58 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    if (!isLogin(true)) {
+       
+    } else {
+      // let hInfo = isBuy();
+      // this.setData({
+      //   hInfo: hInfo
+      // })
+      this.getList();
+    }
+    
   },
-
+  getList() {
+    let data = {
+      type: 1
+    }
+    http.getcard(data)
+    .then(res => {
+      let list = res.list;
+      list = list.map(item => {
+         item.check = false;
+         return item;
+      })
+      this.setData({
+        list: list,
+        allChecked: false,
+        count: 0,
+        money: 0,
+      })
+    })
+  },
+  delect(){
+    let productId = [];
+    let list = this.data.list;
+    for (let i = 0; i < list.length; i++) {
+      let item = list[i]
+      if (item.check) {
+        productId.push(item.productId)
+      }
+    }
+    let data = {
+      type: 1,
+      productId: productId.join()
+    };
+    http.clearCard(data)
+      .then(res => {
+        wx.showToast({
+          title: '删除成功',
+          icon: 'cuccess'
+        })
+        this.getList();
+      })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */
@@ -94,9 +128,9 @@ Page({
       }
     })
     
-    if(count > 5) {
+    if(count > 6) {
       wx.showToast({
-        title: '每次最多选择五本书',
+        title: '每次最多选择6本书',
         icon: 'none'
       })
       return false;
@@ -114,13 +148,53 @@ Page({
     })
   },
   jumpToBooks(e) {
+    let id = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '/pages/book/book',
+      url: '/pages/book/book?id='+ id,
     })
   },
   jumpTosubmitOrder() {
-    wx.navigateTo({
-      url: '/pages/submitOrder/submitOrder',
+    let hInfo = this.data.hInfo
+    orderNumFN((res) => {
+      if(res.complete == res.all) {
+        // 组建内容
+        let pojo = [];
+        let list = this.data.list;
+        console.log(list)
+        for (let i = 0; i < list.length; i++) {
+          let item = list[i]
+          if (item.check) {
+            pojo.push({
+              productCount: 1,
+              productId: item.productId,
+              productImage: item.productImage,
+              productName: item.productName,
+              productPrice: item.productPrice
+            })
+          }
+        }
+
+
+        wx.setStorage({
+          key: "pojo",
+          data: pojo,
+          success: () => {
+            wx.navigateTo({
+              url: '/pages/submitOrder/submitOrder',
+            })
+          }
+        })
+      }else {
+        wx.showToast({
+          title: '您有借书订单未完成，请先完成订单',
+          icon: 'none'
+        })
+      }
     })
+    if (!isBuy(true)) {
+     return false;
+    }
+    
+    
   }
 })

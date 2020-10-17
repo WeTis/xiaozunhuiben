@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "list": "/pages/shop/list/list",
+    "card": "/pages/shop/card/card",
+    "order": "/pages/shop/order/order"
+  },
+  "navigationBarTitleText": "商品"
+}

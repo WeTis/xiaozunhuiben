@@ -2,7 +2,7 @@
 <view class="pageFixed">
   <!-- 提示 -->
   <!-- <view class="tip">
-    <i class="iconfont icon-tishi"></i>
+    <i class="font_family icon-tishi"></i>
     <text>请提交您想看或者建议的书单，我们评估后会尽快上架</text>
   </view> -->
   <wi-notice notice="请提交您想看或者建议的书单，我们评估后会尽快上架" />
@@ -11,7 +11,7 @@
     <view class="item">
       <view class="left">书名</view>
       <view class="right">
-        <input placeholder="请输入书名"></input>
+        <input placeholder="请输入书名" value="{{bookName}}" bindinput="getbookName"></input>
       </view>
     </view>
   </view>
@@ -22,19 +22,19 @@
     <view class="item">
       <view class="left">系列名</view>
       <view class="right">
-        <input placeholder="请填写系列名（不是系列图书不用填写）"></input>
+        <input placeholder="请填写系列名（不是系列图书不用填写）" value="{{booksName}}" bindinput="getbooksName"></input>
       </view>
     </view>
     <view class="item">
       <view class="left">作者</view>
       <view class="right">
-        <input placeholder="请填写作者姓名"></input>
+        <input placeholder="请填写作者姓名" bindinput="getbookAuthor" value="{{bookAuthor}}"></input>
       </view>
     </view>
     <view class="item">
       <view class="left">出版社</view>
       <view class="right">
-        <input placeholder="请填写出版社信息"></input>
+        <input placeholder="请填写出版社信息" bindinput="getbookPress" value="{{bookPress}}"></input>
       </view>
     </view>
     <view class="item">
@@ -45,7 +45,7 @@
         {{date ? date : '请选择出版日期'}}
       </view>
     </picker>
-        <i class="iconfont icon-xiangyou"></i>
+        <i class="font_family icon-gengduojiantou"></i>
       </view>
     </view>
   </view>
@@ -55,14 +55,14 @@
       <view class="left">书籍图片</view>
       <view class="right">
         <view class="uplodImg" wx:if="{{!uploadImg}}" bindtap="uploadFn">
-          <i class="iconfont icon-jia"></i>
+          <i class="font_family icon-jia"></i>
         </view>
         <image wx:else src="{{uploadImg}}" mode="scaleToFill" bindtap="uploadFn"></image>
       </view>
     </view>
   </view>
 
-  <view class="btn">提交</view>
+  <view class="btn" bindtap="submit">提交</view>
 </view>
 
 

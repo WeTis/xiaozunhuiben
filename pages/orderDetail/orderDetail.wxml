@@ -1,0 +1,95 @@
+<!--pages/submitOrder/submitOrder.wxml-->
+<wxs module='filter' src='../../utils/tool.wxs'></wxs>
+<view class="pageFixed">
+  <!-- 地址 -->
+  <view class="addressBox">
+    <view class="left">
+      <i class="font_family icon-Group-"></i>
+    </view>
+    <view class="center">
+      <view>
+        <text class="name">{{adress.receiveName}}</text>
+        <text class="phone">{{adress.receivePhone}}</text>
+      </view>
+      <view class="addressDist">
+        <text wx:for="{{filter._splitInfo(adress.receiveAdress,'$$')}}">
+        {{item}}
+        </text>
+      </view>
+    </view>
+    <view class="right">
+      <i class="font_family icon-xiangyou"></i>
+    </view>
+  </view>
+  <!-- 书 -->
+  <view class="bookList" bindtap="jumpTobookOrder">
+     <view class="left">
+        <view class="img" wx:for="{{list}}">
+          <image mode="widthFix" src="{{item.productImage}}"></image>
+        </view>
+     </view>
+     <view class="right">
+        <text>共{{list.length}}件</text>  
+        <i class="font_family icon-gengduojiantou"></i>
+     </view>
+  </view>
+
+  <!-- 借阅时间 -->
+  <view class="flexList">
+    <view class="item">
+        <view class="name">借阅日期：</view>
+        <view class="text">{{startdate}} 至 {{enddate}}</view>
+    </view>
+  </view>
+
+  <view class="flexList">
+    <view class="item">
+        <view class="name">订单编号：</view>
+        <view class="text">{{orderNumber? orderNumber : '暂无订单编号'}}</view>
+    </view>
+    <view class="item">
+        <view class="name">订单创建时间：</view>
+        <view class="text">{{startdate}}</view>
+    </view>
+  </view>
+
+  <view class="flexList">
+    <view class="item">
+        <view class="name">发货物流公司：</view>
+        <view class="text">{{kdName ? kdName : "暂无快递信息"}}</view>
+    </view>
+    <view class="item">
+        <view class="name">发货物流单号：</view>
+        <view class="text">{{kdNumber ? kdNumber : "暂无快递信息"}}
+          <text class="copy" data-num="{{kdNumber}}" bindtap="copy">复制</text>
+        </view>
+    </view>
+  </view>
+  
+
+  <view class="flexList" wx:if="{{userKdName}}">
+    <view class="item">
+        <view class="name">用户发货物流</view>
+    </view>
+    <view class="item">
+        <view class="name">发货物流公司：</view>
+        <view class="text">{{userKdName ? userKdName : "暂无快递信息"}}</view>
+    </view>
+    <view class="item">
+        <view class="name">发货物流单号：</view>
+        <view class="text">{{userKdNumber ? userKdNumber : "暂无快递信息"}}
+          <text class="copy" data-num="{{userKdNumber}}" bindtap="copy">复制</text>
+        </view>
+    </view>
+  </view>
+
+
+  <view class="c">
+    <view class="left">
+      <i class="font_family icon-dianhua"></i> 电话联系
+    </view>
+    <view class="right">
+      <i class="font_family icon-kefu"></i> 客服联系
+    </view>
+  </view>
+</view>

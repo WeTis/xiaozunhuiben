@@ -7,14 +7,28 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list: []
+    list: [],
+    blank: {
+      icon: 'icon-shujia-xuanzhong',
+      dist: '暂无图书',
+      btnText: null
+    }
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getData()
+    let name = options.name;
+    wx.setNavigationBarTitle({
+      title: name
+    })
+    let blank = this.data.blank;
+    blank.dist = '暂无'+name;
+    this.setData({
+      blank: blank
+    })
+    this.getData(options.id)
   },
 
   /**
@@ -37,23 +51,29 @@ Page({
   onHide: function () {
 
   },
-  getData() {
+  getData(id) {
     let data = {
-      labelSort: 2
+      labelSort: id
     }
     http.productLabelList(data)
     .then(res => {
       console.log(res)
       let arr = [];
       let list = res.list;
-      for(let i = 0; i < list.length; i++) {
-        if(list[i].labelSort == 2) {
-          arr.push(list[i])
-        }
-      }
+      // for(let i = 0; i < list.length; i++) {
+      //   if(list[i].labelSort == id) {
+      //     arr.push(list[i])
+      //   }
+      // }
       this.setData({
-        list: arr
+        list: list
       })
+    })
+  },
+  jumpToBooklist(e) {
+    let name = e.currentTarget.dataset.name;
+    wx.navigateTo({
+      url: '/pages/booklist/booklist?label=' + name +"&isShowNavBar=true",
     })
   },
   /**

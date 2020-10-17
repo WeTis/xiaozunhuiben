@@ -1,33 +1,35 @@
 // pages/evaluatelist/evaluatelist.js
+import { api } from './module.js';
+const http = new api();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    evaluate: {
-      src: "/images/icons/me.png",
-      name: "用户1",
-      time: "2020-09-01",
-      content: "用户的品佳不错啊",
-      score: 4
-    }
+    clist: [],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+   let id = options.id;
+    this.getDetail(id);
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  getDetail(productId) {
+    let data = {
+      productId: productId
+    };
+    http.getOneProduct(data)
+      .then(res => {
+        let clist = res.list;
+        this.setData({
+          clist: clist
+        })
+      })
   },
-
   /**
    * 生命周期函数--监听页面显示
    */

@@ -9,6 +9,10 @@ Component({
       type: Boolean,
       value: false
     },
+    showauthor: {
+      type: Boolean,
+      value: false
+    }
   },
   options: {
     styleIsolation: 'apply-shared'
@@ -26,9 +30,16 @@ Component({
   methods: {
     jumpTobook(e) {
       let id = e.currentTarget.dataset.id;
-      wx.navigateTo({
-        url: '/pages/book/book?id='+id,
-      })
+      if (this.data.book.ifBook == 1) {
+        wx.navigateTo({
+          url: '/pages/book/book?id=' + id,
+        })
+      } else {
+        wx.navigateTo({
+          url: '/pages/shop/detail/detail?id=' + id,
+        })
+      }
+      
     }
   }
 })

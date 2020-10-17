@@ -1,7 +1,9 @@
-<view class="list pageFixed">
-  <view class="item" wx:for="{{list}}" wx:key="{{item.id}}">
-      <image src="{{item.labelImage}}"></image>
+<view class="list pageFixed" >
+  <view class="item" wx:for="{{list}}" wx:key="{{item.id}}" bindtap="jumpToBooklist" data-name="{{item.productLabel}}">
+      <image src="{{item.labelImage}}" mode="aspectFit"></image>
       <view class="name">{{item.productLabel}}</view>
-      <view class="dist">{{item.labelRemark}}</view>
+      <view class="dist" wx:if="{{item.labelRemark}}">{{item.labelRemark}}</view>
   </view>
 </view>
+<!-- 空页 -->
+<wi-blank wx:if="{{list.length == 0}}" blank="{{blank}}"  />

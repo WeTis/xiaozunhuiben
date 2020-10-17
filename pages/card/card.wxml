@@ -1,34 +1,38 @@
 <view class="card">
-  <view class="list">
-    <view class="item" wx:for="{{list}}" bindtap="jumpToBooks">
+  <view class="list" wx:if="{{list.length > 0}}">
+    <view class="item" wx:for="{{list}}" bindtap="jumpToBooks" data-id="{{item.productId}}" wx:key="productId">
       <view class="left" catchtap="checkedFn" data-index="{{index}}">
-        <i class="iconfont icon-xianshi_xuanze" wx:if="{{!item.check}}"></i>
-        <i class="iconfont icon-xuanze blue" wx:if="{{item.check}}"></i>
+        <i class="font_family icon-xianshi_xuanze" wx:if="{{!item.check}}"></i>
+        <i class="font_family icon-xuanze blue" wx:if="{{item.check}}"></i>
       </view>
       <view class="center">
-        <image src="{{item.img}}" mode="widthFix"></image>
+        <image src="{{item.productImage}}" mode="aspectFit"></image>
       </view>
       <view class="right">
-        {{item.name}}
+        {{item.productName}}
       </view>
     </view>
   </view>
-
+  
+   <wi-blank  blank="{{blank}}" wx:if="{{list.length == 0}}" />
   <!-- 底部全选 -->
-  <view class="bottomFixed">
+  <view class="bottomFixed" wx:if="{{list.length > 0}}">
     <view class="left">
       <view class="select" bindtap="allCheckedFn">
-        <i class="iconfont icon-xianshi_xuanze" wx:if="{{!allChecked}}"></i>
-        <i class="iconfont icon-xuanze blue" wx:if="{{allChecked}}"></i>
+        <i class="font_family icon-xianshi_xuanze" wx:if="{{!allChecked}}"></i>
+        <i class="font_family icon-xuanze blue" wx:if="{{allChecked}}"></i>
         <text>全选</text>
       </view>
       <view class="numText">
         <text class="t">已选：</text>
         <text class="num">{{count}}</text>
-        <text>书位</text>
+        <!-- <text>书位</text> -->
       </view>
     </view>
-    <view class="right" bindtap="jumpTosubmitOrder">
+    <view class="right p" wx:if="{{count > 0}}" bindtap="delect">
+      删除
+    </view>
+    <view class="right" wx:if="{{count > 0}}"  bindtap="jumpTosubmitOrder">
       去下单
     </view>
   </view>

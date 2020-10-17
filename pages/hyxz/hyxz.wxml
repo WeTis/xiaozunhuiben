@@ -1,0 +1,17 @@
+<!--pages/hyxz/hyxz.wxml-->
+<view class="box">
+  <view class="name">1.会员须知</view>
+  <view class="text">会员计划七天内未激活全额可退，超过七天需扣除20%的手续费；会员计划一旦激活，无法退款；</view>
+
+  <view class="name">2.会员卡激活</view>
+  <view class="text">购买的会员卡需要在我的-我的会员点击激活，激活后立即生效，不激活则在购买之日起一年后自动生效</view>
+
+  <view class="name">3. 往返包邮</view>
+  <view class="text">平台承诺往返包邮，若要指定快递需要补运费差</view>
+
+  <view class="name">4.会员卡使用范围</view>
+  <view class="text">会员卡仅能用于绘本图书以及平台指定的商品</view>
+
+  <view class="name">5.会员卡押金</view>
+  <view class="text">会员卡次数用完或到期，所有订单结算完成，在我的->我的钱包，输入支付宝账号和姓名申请提现</view>
+</view>

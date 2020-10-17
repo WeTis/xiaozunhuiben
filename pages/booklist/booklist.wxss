@@ -58,7 +58,7 @@ page{
 }
 .bookList .item{
   width: 345rpx;
-  height: 400rpx;
+  /* height: 400rpx; */
   padding: 20rpx;
   box-sizing: border-box;
   display: flex;
@@ -76,4 +76,7 @@ page{
  .bookList .item wi-book .image image{
   width: 310rpx;
   height: 207rpx;
+}
+wi-blank{
+  flex: 1;
 }

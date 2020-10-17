@@ -12,7 +12,20 @@
     "pages/newAddress/newAddress",
     "pages/submitOrder/submitOrder",
     "pages/bookOrder/bookOrder",
-    "pages/awards/awards"
+    "pages/awards/awards",
+    "pages/orderList/orderList",
+    "pages/orderDetail/orderDetail",
+    "pages/znxs/znxs",
+    "pages/login/login",
+    "pages/hy/hy",
+    "pages/hyxz/hyxz",
+    "pages/qb/qb",
+    "pages/shop/index/index",
+    "pages/shop/detail/detail",
+    "pages/userInfo/userInfo",
+    "pages/help/help",
+    "pages/xzzj/xzzj",
+    "pages/zshy/zshy"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -21,33 +34,41 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "color": "#474747",
-    "selectedColor": "#d43c43",
+    "color": "#8C9196",
+    "selectedColor": "#232629",
     "list": [
       {
         "pagePath": "pages/index/index",
         "text": "首页",
-        "iconPath": "images/icons/me.png",
-        "selectedIconPath": "images/icons/me.png"
+        "iconPath": "images/icons/index.png",
+        "selectedIconPath": "images/icons/index-s.png"
+      },
+      {
+        "pagePath": "pages/xzzj/xzzj",
+        "text": "小樽的家",
+        "iconPath": "images/icons/xzj.png",
+        "selectedIconPath": "images/icons/xzj-s.png"
       },
       {
         "pagePath": "pages/card/card",
         "text": "书架",
-        "iconPath": "images/icons/me.png",
-        "selectedIconPath": "images/icons/me.png"
+        "iconPath": "images/icons/card.png",
+        "selectedIconPath": "images/icons/card-s.png"
       },
       {
         "pagePath": "pages/my/my",
         "text": "我的",
-        "iconPath": "images/icons/me.png",
-        "selectedIconPath": "images/icons/me.png"
+        "iconPath": "images/icons/my.png",
+        "selectedIconPath": "images/icons/my-s.png"
       }
     ]
   },
   "usingComponents": {
     "wi-notice": "/component/notice/notice",
     "wi-submitBtn": "/component/submitBtn/submitBtn",
-    "navBar": "/component/navBar/navBar"
+    "navBar": "/component/navBar/navBar",
+    "wi-blank": "/component/blank/blank",
+    "iconfont": "./iconfont/iconfont"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

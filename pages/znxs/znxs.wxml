@@ -1,0 +1,38 @@
+<view>
+    <view class="top">
+      <navBar title='' background='#fff' back="{{true}}" home="{{true}}" bindback="handlerGobackClick" bindhome="handlerGohomeClick">
+        <view class='lxy-nav-bar-search' slot="center">
+            <view class='lxy-nav-bar-search__icon' />
+            <view class='lxy-nav-bar-search__input'>
+                <input bindconfirm="confirmSearch" bindinput="search" class="srch-ipt" confirmType="search" placeholder="搜索内容" placeholderClass="ipt-placeholder" type="text" value=""></input>
+            </view>
+        </view>
+      </navBar>
+    </view>
+    <view class="center">
+      <view class="box">
+        <view class="name">年龄(单选)</view>
+        <view class="list">
+          <view class="item {{item.checked ? 'active':''}}"  wx:for="{{age}}" bindtap="clickAge" data-index="{{index}}">{{item.name}}</view>
+        </view>
+      </view>
+
+
+      <view class="box">
+        <view class="name">分类(可多选，最多选择3类)</view>
+        <view class="list">
+          <view class="item {{item.checked ? 'active':''}}" wx:for="{{listType}}" bindtap="clickList" data-index="{{index}}">{{item.name}}</view>
+        </view>
+      </view>
+
+      <view class="box">
+        <view class="name">请选择本数(单选)</view>
+        <view class="list">
+          <view class="item {{item.checked ? 'active':''}}" wx:for="{{books}}" bindtap="clickBooks" data-index="{{index}}">{{item.name}}本</view>
+        </view>
+      </view>
+
+      
+      <wi-submitBtn text="开始选书"  bindtap="submit"/>
+    </view>
+</view>

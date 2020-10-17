@@ -1,5 +1,5 @@
 <!--component/notice/notice.wxml-->
 <view class="wi-tip">
-    <i class="iconfont icon-tishi"></i>
+    <i class="font_family icon-tishi"></i>
     <text>{{notice}}</text>
 </view>

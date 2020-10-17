@@ -1,0 +1,17 @@
+<!--pages/shop/list/list.wxml-->
+<view class="list">
+   <view class="item" wx:for="{{list}}" wx:key="id" bindtap="jumpTodetail" data-id="{{item.id}}">
+      <view class="img">
+        <image src="{{item.productImage}}" mode="aspectFit"></image>
+      </view>
+      <view class="content">
+        <view class="name">{{item.productName}}</view>
+        <view class="price-card">
+          <view class="price">￥<text>{{item.productPrice}}</text> </view>
+          <!-- <view class="card">
+            <i class="font_family icon-gouwucheman  "></i>
+          </view> -->
+        </view>
+      </view>
+   </view>
+</view>

@@ -1,0 +1,83 @@
+<view class="pageFixed">
+   <view class="bg">
+      <view class="tab">
+        <view bindtap="clickTab" data-index="1" class="tab-item {{tabType == 1 ? 'active': ''}}">不限次卡</view>
+        <view bindtap="clickTab" data-index="2" class="tab-item {{tabType == 2 ? 'active': ''}}">次卡</view>
+      </view>
+      <view class="icons">
+        <view class="icons-item" wx:for="{{iconsData}}" bindtap="jumpToOrderList" data-id="{{item.id}}" wx:key="{{item.id}}">
+          <i class="font_family {{item.icons}}"></i>
+          <view class="text">{{item.name}}</view>
+        </view>
+      </view>
+   </view>
+   <view class="list">
+      <view class="list-item {{hyInfo.id == item.id ? 'active':''}}" wx:key="{{item.id}}" wx:if="{{item.type == tabType}}" bindtap="clickType" wx:for="{{list}}" bindtap="selectType" data-id="{{item.id}}">
+        <view class="name">{{item.name}}</view>
+        <view class="money">￥ <text>{{item.price}}</text>.00 </view>
+        <view class="dmoney">￥{{item.oldPrice}}.00 </view>
+      </view>
+   </view>
+   <view class="dist">
+    <text>不限次卡借阅须知：</text>
+    用户同时可借订单到达限制后，需归还部分订单方可继续借阅。归还以用户把订单交给快递员并在我的订单里手工输入快递单号为准。
+   </view>
+
+   <view class="mm">
+      <view class="ber">
+        <view class="left">会员有效期</view>
+        <view class="right">{{hyInfo.time}}个月</view>
+      </view>
+      <view class="ber">
+        <view class="left">每单租期</view>
+        <view class="right">会员卡到期日</view>
+      </view>
+      <view class="ber b">
+        <view class="left">押金(会员卡使用完后可退)</view>
+        <view class="right">200.00元</view>
+      </view>
+
+      <view class="ber m">
+        <view class="left">会员须知
+          <text>会员卡退款、押金退还等详情</text>
+        </view>
+        <view class="right">
+          <i class="font_family icon-gengduojiantou"></i>
+        </view>
+      </view>
+   </view>
+</view>
+
+<view class="btnBox">
+  <wi-submitBtn text="立即开通" wx:if="{{!hInfo.isMember}}" bindtap="submit"/>
+  <wi-submitBtn text="会员未过期，充值押金" wx:if="{{hInfo.isMember && !hInfo.isuserBalance && !hInfo.isInvalid}}" bindtap="submit" />
+  <wi-submitBtn text="会员过期，重新充值" wx:if="{{hInfo.isMember && hInfo.isInvalid}}" bindtap="submit" />
+  <!-- <wi-submitBtn text="充值押金" wx:if="{{hInfo.isMember && !hInfo.isuserBalance}}" bindtap="submit"/> -->
+  <wi-submitBtn text="{{'您已经是'+userLabel}}" wx:if="{{hInfo.isMember && hInfo.isuserBalance}}" />
+  <!-- <wi-submitBtn text="充值押金" wx:if="{{(userLabel != '不是' && info.cardCount == 0)}}" bindtap="submit"/> -->
+  <!-- <wi-submitBtn text="立即开通" bindtap="submit"/> -->
+</view>
+
+<!-- 激活会员卡 -->
+<view class="hyCard" wx:if="{{memberCode}}">
+   <view class="hyCardCon">
+      <view class="name">有好友赠送您会员卡，立即激活使用</view>
+      <view class="cardImg {{card.id != 4 ? 'col':''}}">
+          <image src="{{card.bg}}" class="bg"></image>
+        <view class="price">
+          <image src="{{card.tag}}" class="tag"></image>
+          <text>价值</text>
+          <text>￥</text>
+          <text class="num">{{card.price}}</text>
+        </view>
+        <view class="c">
+          <image src="{{card.lo}}" class="lo"></image>
+          <view class="name">{{card.name}}</view>
+          <view class="time">到期</view>
+        </view>
+      </view>
+      <!-- <view class="dist"></view> -->
+      <wi-submitBtn text="立即激活" bindtap="jihuo"/>
+      <wi-submitBtn class="mn" text="暂不激活" bindtap="nojihuo"/>
+   </view>
+</view>

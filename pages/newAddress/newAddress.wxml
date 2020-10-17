@@ -4,13 +4,13 @@
     <view class="item">
       <view class="left">收货人：</view>
       <view class="right">
-        <input placeholder="请输入姓名"></input>
+        <input placeholder="请输入姓名" value="{{receiveName}}" bindinput="getreceiveName"></input>
       </view>
     </view>
     <view class="item">
       <view class="left">手机号码：</view>
       <view class="right">
-        <input placeholder="请输入手机号码"></input>
+        <input placeholder="请输入手机号码" value="{{receivePhone}}" bindinput="getreceivePhone"></input>
       </view>
     </view>
     <view class="item">
@@ -27,16 +27,16 @@
     <view class="item">
       <view class="left">详细地址：</view>
       <view class="right">
-        <input placeholder="请输入详细地址"></input>
+        <input placeholder="请输入详细地址" value="{{derss}}" bindinput="getDerss"></input>
       </view>
     </view>
-    <view class="item">
+    <!-- <view class="item">
       <view class="left">设为默认地址：</view>
       <view class="right rightm">
         <switch class="wx-switch-input" checked="{{switch1Checked}}" bindchange="switch1Change"/>
       </view>
-    </view>
+    </view> -->
   </view>
 
-  <wi-submitBtn text="保存" />
+  <wi-submitBtn text="保存"  bindtap="submit"/>
 </view>

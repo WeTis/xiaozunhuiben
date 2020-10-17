@@ -1,5 +1,6 @@
 {
   "usingComponents": {
     "wi-evaluate":"/component/evaluate/evaluate"
-  }
+  },
+  "navigationBarTitleText": "绘本详情"
 }

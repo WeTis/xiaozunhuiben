@@ -1,31 +1,41 @@
 <!--pages/submitOrder/submitOrder.wxml-->
+<wxs module='filter' src='../../utils/tool.wxs'></wxs>
 <view class="pageFixed">
   <!-- 地址 -->
   <view class="addressBox" bindtap="jumpToAddress">
     <view class="left">
-      <i class="iconfont icon-Group-"></i>
+      <i class="font_family icon-Group-"></i>
     </view>
-    <view class="center">
-      <view>
-        <text class="name">魏同</text>
-        <text class="phone">15102972846</text>
+    <view class="center" wx:if="{{!address}}">
+      <view class="addressDist">
+       暂无地址，请点击选择地址
       </view>
-      <view class="addressDist">北京是海定区测试</view>
+    </view>
+    <view class="center" wx:else>
+      <view>
+        <text class="name">{{address.receiveName}}</text>
+        <text class="phone">{{address.receivePhone}}</text>
+      </view>
+      <view class="addressDist">
+        <text wx:for="{{filter._splitInfo(address.receiveAdress,'$$')}}" wx:key="item">
+        {{item}}
+        </text>
+      </view>
     </view>
     <view class="right">
-      <i class="iconfont icon-xiangyou"></i>
+      <i class="font_family icon-xiangyou"></i>
     </view>
   </view>
   <!-- 书 -->
   <view class="bookList" bindtap="jumpTobookOrder">
      <view class="left">
-        <view class="img" wx:for="{{3}}">
-          <image mode="widthFix" src="/images/icons/me.png"></image>
+        <view class="img" wx:for="{{pojo}}" wx:key="productId">
+          <image mode="widthFix" src="{{item.productImage}}"></image>
         </view>
      </view>
      <view class="right">
-        <text>共4件</text>  
-        <i class="iconfont icon-xiangyou"></i>
+        <text>共{{pojo.length}}件</text>  
+        <i class="font_family icon-gengduojiantou"></i>
      </view>
   </view>
 
@@ -35,29 +45,29 @@
       <view class="left">选择快递</view>
       <view class="right">
         <text>系统默认快递</text>
-        <i class="iconfont icon-xiangyou"></i>
+        <i class="font_family icon-xiangyou"></i>
       </view>
     </view>
 
     <view class="item">
       <view class="left">
         <text>发货时间</text>
-        <i class="iconfont icon-tishi1"></i>
+        <i class="font_family icon-tishi1"></i>
       </view>
       <view class="right iconNext">
-        <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+        <picker mode="date" value="{{date}}" start="2015-09-01"  bindchange="bindDateChange">
             <view class="picker">
               {{date}}
             </view>
           </picker>
-        <i class="iconfont icon-xiangyou"></i>
+        <i class="font_family icon-xiangyou"></i>
       </view>
     </view>
 
-    <view class="item">
+    <view class="item" wx:if="{{type != 'shop'}}">
       <view class="left">借阅时间</view>
       <view class="right">
-        2018-09-06至2018-09-08
+        {{allTime}}
       </view>
     </view>
   </view>
@@ -65,8 +75,8 @@
   <view class="express wi-table mesg">
     <view class="item">
       <view class="left">订单留言</view>
-      <view class="right ">
-        <textarea placeholder="选填，与平台协商一致" name="textarea"/>
+      <view class="right " >
+        <textarea placeholder="选填，与平台协商一致" value="{{content}}" bindinput="getcontent" name="textarea"/>
       </view>
     </view>
   </view>
@@ -77,5 +87,5 @@
     <view class="left"></view>
     <view class="right">提交订单</view>
   </view> -->
-  <wi-submitBtn text="提交订单" />
+  <wi-submitBtn text="提交订单" bindtap="submit" />
 </view>
